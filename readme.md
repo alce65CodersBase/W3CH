@@ -12,9 +12,10 @@
 - EsLint + Prettier
 - Jest + ES6
 - Git + Initial commit
-- carpeta src (contenedor de los challenges)
+- carpeta src (contenedor de los challenges) + .gitkeep
 
 rama feature/config
+
 - Husky
 - GitHub actions
 - SonarCloud
