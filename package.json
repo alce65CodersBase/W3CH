@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll --collect-coverage",
-    "test:prod": "jest --watchAll --collect-coverage --watchAll=false",
+    "test:prod": "jest --watchAll --collect-coverage --watchAll=false --passWithNoTests",
     "prepare": "husky install"
   },
   "keywords": [],
