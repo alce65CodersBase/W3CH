@@ -1,6 +1,8 @@
 # Incorporación al proyecto de Vite + TS
 
-## folders
+## Instalación y configuración
+
+### folders
 
 - src
 - public
@@ -11,7 +13,7 @@ Fichero src/vite-env.d.ts
 /// <reference types="vite/client" />
 ```
 
-## package.json
+### package.json
 
 ```json
   "scripts": {
@@ -25,7 +27,7 @@ Fichero src/vite-env.d.ts
   }
 ```
 
-## tsconfig
+### tsconfig
 
 ```json
   "compilerOptions": {
@@ -48,7 +50,7 @@ Fichero src/vite-env.d.ts
 }
 ```
 
-## index.html
+### index.html
 
 En la raíz del proyecto
 
@@ -66,4 +68,12 @@ En la raíz del proyecto
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
+```
+
+## Uso
+
+```shell
+npm run dev // "vite",
+nmp run build // "tsc && vite build",
+npm run preview // "vite preview"
 ```
