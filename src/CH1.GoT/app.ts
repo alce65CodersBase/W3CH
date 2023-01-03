@@ -1,11 +1,9 @@
 import { Character } from './models/character';
-import { createCharacters } from './services/characters';
 import { getCardTemplate } from './templates/card';
 import { getCommunicationsTemplate } from './templates/communica';
 
+let characters: Array<Character> = [];
 type Actions = 'muere' | 'habla';
-
-const characters = createCharacters();
 
 const renderCards = (selector: HTMLElement) => {
   characters.forEach((item) => {
@@ -17,7 +15,7 @@ const renderCards = (selector: HTMLElement) => {
 };
 
 const handleCommunicate = (characterName: string) => {
-  console.log('Muere', characterName);
+  console.log('Habla', characterName);
   const character = characters.find(
     (item) => item.name === characterName
   ) as Character;
@@ -34,10 +32,10 @@ const handleCommunicate = (characterName: string) => {
 };
 
 const handleDead = (characterName: string) => {
-  console.log('Habla', characterName);
+  console.log('Muere', characterName);
   const id = characters.findIndex((item) => item.name === characterName);
   characters[id].dead();
-  appGoT();
+  appGoT(characters);
 };
 
 const handleClick = (ev: Event) => {
@@ -56,7 +54,8 @@ const manageRender = () => {
   buttons.forEach((item) => item.addEventListener('click', handleClick));
 };
 
-const appGoT = () => {
+export const appGoT = (_characters: Array<Character>) => {
+  characters = _characters;
   // Create ul in app initial slot
   const elementApp = <HTMLDivElement>document.querySelector('div.app');
   elementApp.innerHTML = '<ul class="characters-list row list-unstyled"></ul>';
@@ -69,5 +68,3 @@ const appGoT = () => {
 
   manageRender();
 };
-
-appGoT();
