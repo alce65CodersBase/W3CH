@@ -72,6 +72,5 @@ export const getCardTemplate = (item: Character) => {
       </i>
     </div>;
   `;
-  console.log(item);
   return template;
 };

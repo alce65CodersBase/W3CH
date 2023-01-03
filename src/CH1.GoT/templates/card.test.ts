@@ -1,5 +1,4 @@
-import { King } from '../models/king';
-import { MOCK_DATA, MOCK_KING } from '../services/mock';
+import { MOCK_KING } from '../services/mock';
 import { getCardTemplate } from './card';
 
 describe('Given getCardTemplate', () => {
