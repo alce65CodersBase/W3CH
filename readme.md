@@ -1,10 +1,10 @@
 # Week3 Challenges: Components in TS
 
-- Day 1.
-- Day 2.
+- Day 1. GoT
+- Day 2. CRUD List (ToDo, Pets...) with TS Components
 - Day 3.
-- Day 4.
-- Day 5. WE:
+- Day 4. Series with TS Components
+- Day 5. WE: Pokemons with TS Components
 
 ## Configuraciones (Proyecto anterior)
 
@@ -76,3 +76,26 @@ export default {
   resolver: 'jest-ts-webcompat-resolver'
 };
 ```
+
+### Instalación de Vite
+
+(Ver fichero aparte)
+
+### Instalación Testing-Library
+
+npm i -D jest-environment-jsdom
+npm i -D @testing-library/dom -> render, screen...
+npm i -D @testing-library/jest-dom -> matchers extra
+npm i -D @testing-library/user-event
+
+("@types/testing-library__dom": "^7.5.0")
+
+- Config: jest.config.ts
+
+```js
+  { testEnvironment: 'jsdom', }
+```
+
+## Day 1. GoT
+
+### Testing
