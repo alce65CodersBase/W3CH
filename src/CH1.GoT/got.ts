@@ -8,7 +8,6 @@ type Actions = 'muere' | 'habla';
 const characters = createCharacters();
 
 const renderCards = (selector: HTMLElement) => {
-  selector.innerHTML = '';
   characters.forEach((item) => {
     const template = `
       <li class="character col">${getCardTemplate(item)}</li>
@@ -58,10 +57,10 @@ const manageRender = () => {
 };
 
 const appGoT = () => {
-  // Define DOM Elemnts
-  const elementList = <HTMLUListElement>(
-    document.querySelector('ul.characters-list')
-  );
+  // Create ul in app initial slot
+  const elementApp = <HTMLDivElement>document.querySelector('div.app');
+  elementApp.innerHTML = '<ul class="characters-list row list-unstyled"></ul>';
+  const elementList = <HTMLUListElement>elementApp.firstChild;
 
   // Create and render cards
   renderCards(elementList);

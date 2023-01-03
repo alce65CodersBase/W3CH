@@ -3,11 +3,18 @@ body {
   /* overflow: hidden; */
   min-width: 35rem;
 }
+
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .characters-list {
   /* flex-wrap: nowrap; */
   max-width: 100%;
   min-height: 100vh;
   align-items: center;
+  margin-block-start: 1rem;
 }
 .character {
   width: 20%;
