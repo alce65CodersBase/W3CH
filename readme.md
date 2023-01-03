@@ -1,10 +1,10 @@
 # Week3 Challenges: Components in TS
 
-- Day 1.
-- Day 2.
+- Day 1. GoT
+- Day 2. CRUD List (ToDo, Pets...) with TS Components
 - Day 3.
-- Day 4.
-- Day 5. WE:
+- Day 4. Series with TS Components
+- Day 5. WE: Pokemons with TS Components
 
 ## Configuraciones (Proyecto anterior)
 
@@ -76,3 +76,21 @@ export default {
   resolver: 'jest-ts-webcompat-resolver'
 };
 ```
+
+### Instalación de Vite
+
+(Ver fichero aparte)
+
+### Instalación Testing-Library
+
+"@testing-library/dom": "^8.19.0",
+"@testing-library/jest-dom": "^5.16.5",
+"jest-environment-jsdom": "^29.3.1",
+"@testing-library/user-event": "^14.4.3",
+
+("@types/testing-library__dom": "^7.5.0")
+
+
+## Day 1. GoT
+
+### Testing

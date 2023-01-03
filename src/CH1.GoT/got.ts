@@ -1,7 +1,7 @@
 import { Character } from './models/character';
 import { createCharacters } from './services/characters';
 import { getCardTemplate } from './templates/card';
-import { getCommunicationsTemplate } from './templates/comunics';
+import { getCommunicationsTemplate } from './templates/communica';
 
 type Actions = 'muere' | 'habla';
 
