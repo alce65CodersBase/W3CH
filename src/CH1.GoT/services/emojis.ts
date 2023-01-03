@@ -7,8 +7,8 @@
 }; */
 
 export enum emoji {
-  'rey' = '👑',
-  'luchador' = '🗡',
-  'asesor' = '🎓',
-  'escudero' = '🛡',
+  'king' = '👑',
+  'fighter' = '🗡',
+  'counselor' = '🎓',
+  'squire' = '🛡',
 }
