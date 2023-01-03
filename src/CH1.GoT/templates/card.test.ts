@@ -1,14 +1,16 @@
 import { King } from '../models/king';
+import { MOCK_DATA, MOCK_KING } from '../services/mock';
 import { getCardTemplate } from './card';
 
 describe('Given getCardTemplate', () => {
   describe('When we call with a character as argument', () => {
-    const character = new King('Pepe', 'Coder', 23, 2);
+    const character = MOCK_KING;
+    const characterName = `${MOCK_KING.name} ${MOCK_KING.family}`;
     test('Then if character is live it should return a template string', () => {
       // Act
       const r = getCardTemplate(character);
       // Assert
-      expect(r).toContain('Pepe Coder');
+      expect(r).toContain(characterName);
     });
     test('Then if character is live it should return a template string', () => {
       // Arrange
@@ -16,7 +18,7 @@ describe('Given getCardTemplate', () => {
       // Act
       const r = getCardTemplate(character);
       // Assert
-      expect(r).toContain('Pepe Coder');
+      expect(r).toContain(characterName);
     });
   });
 });

@@ -1,4 +1,18 @@
+import { King } from '../models/king';
+
+export const MOCK_KING = new King('Simba', 'Leon', 33, 2);
+
 export const MOCK_DATA = [
+  {
+    name: 'Simba',
+    family: 'Leon',
+    age: 33,
+    category: 'king',
+    kingdomYears: 2,
+  },
+];
+
+export const MOCK_DATA_JSON = [
   {
     name: 'Joffrey',
     family: 'Baratheon',
