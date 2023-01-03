@@ -74,5 +74,5 @@ export default {
   testEnvironment: 'node',
   testPathIgnorePatterns: ['dist'],
   resolver: 'jest-ts-webcompat-resolver'
- };
+};
 ```
