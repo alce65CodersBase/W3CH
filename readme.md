@@ -83,13 +83,18 @@ export default {
 
 ### Instalación Testing-Library
 
-"@testing-library/dom": "^8.19.0",
-"@testing-library/jest-dom": "^5.16.5",
-"jest-environment-jsdom": "^29.3.1",
-"@testing-library/user-event": "^14.4.3",
+npm i -D jest-environment-jsdom
+npm i -D @testing-library/dom -> render, screen...
+npm i -D @testing-library/jest-dom -> matchers extra
+npm i -D @testing-library/user-event
 
 ("@types/testing-library__dom": "^7.5.0")
 
+- Config: jest.config.ts
+
+```js
+  { testEnvironment: 'jsdom', }
+```
 
 ## Day 1. GoT
 
