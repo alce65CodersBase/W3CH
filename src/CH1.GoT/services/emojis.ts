@@ -1,9 +1,9 @@
-/* eslint-disable no-unused-vars */
-/* export const emoji = {
-    rey: '👑',
-    luchador: '🗡',
-    asesor: '🎓',
-    escudero: '🛡',
+/* Alternativa al enum
+export const emoji = {
+    king: '👑',
+    fighter: '🗡',
+    counselor: '🎓',
+    squire: '🛡',
 }; */
 
 export enum emoji {
