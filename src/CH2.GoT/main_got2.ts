@@ -1,6 +1,4 @@
-//For later import { appGoT } from './app';
-import { createCharacters } from '../CH1.GoT/services/characters';
+import { App } from './components/app/app';
 
-const characters = createCharacters();
-console.log('Loaded', characters);
-//For later appGoT(characters);
+console.log('Loaded App');
+new App();
