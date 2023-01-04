@@ -2,8 +2,13 @@ export abstract class Component {
   protected template!: string;
   private element!: Element | null;
 
-  render() {
+  getElement() {
     return this.element;
+  }
+
+  render() {
+    // Se sobrescribe en las clases hijas
+    // return this.element;
   }
 
   /*
