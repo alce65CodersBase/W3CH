@@ -7,6 +7,7 @@ import { Communicate } from '../communicate/communicate.js';
 
 export class HomePage extends Component {
   characters: Array<Character>;
+  cards!: Array<Card>;
   constructor(private selector: string) {
     super();
     this.characters = createCharacters();
@@ -21,7 +22,8 @@ export class HomePage extends Component {
     const communicate = this.handleCommunicate.bind(this);
     const dead = this.handleDead.bind(this);
     this.characters.forEach((item) => {
-      new Card('.characters-list', item, dead, communicate);
+      const card = new Card('.characters-list', item, dead, communicate);
+      this.cards.push(card);
     });
     return element;
   }
