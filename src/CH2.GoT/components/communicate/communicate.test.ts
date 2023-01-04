@@ -8,7 +8,11 @@ describe('Given the component Communicate', () => {
     // Arrange
     const character = MOCK_KING;
     document.body.innerHTML = `<div></div>`;
-    new Communicate('div', character);
+    const communicate = new Communicate('div', character);
+
+    test('Then we should have instantiate it', () => {
+      expect(communicate).toBeInstanceOf(Communicate);
+    });
     test('Then it return a template string', () => {
       // Act
       const r = screen.getByText(character.communicate());
