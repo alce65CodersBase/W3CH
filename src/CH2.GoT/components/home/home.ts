@@ -7,10 +7,11 @@ import { Communicate } from '../communicate/communicate.js';
 
 export class HomePage extends Component {
   characters: Array<Character>;
-  cards!: Array<Card>;
+  cards: Array<Card>;
   constructor(private selector: string) {
     super();
     this.characters = createCharacters();
+    this.cards = [];
     consoleDebug(this.characters);
     this.template = this.createTemplate();
     this.render();
