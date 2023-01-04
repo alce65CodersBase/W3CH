@@ -1,9 +1,9 @@
 import { HomePage } from '../home/home';
 import { App } from './app.js';
-import { consoleDebug } from '../../tools/debug';
+import { consoleDebug } from '../../../lib/tools/debug';
 
 jest.mock('../home/home');
-jest.mock('../../tools/debug');
+jest.mock('../../../lib/tools/debug');
 
 describe('Given "App" class', () => {
   describe('When we instantiate it', () => {

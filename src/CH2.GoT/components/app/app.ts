@@ -1,5 +1,5 @@
 import { HomePage } from '../home/home';
-import { consoleDebug } from '../../tools/debug';
+import { consoleDebug } from '../../../lib/tools/debug';
 
 export class App {
   constructor(selector = '.root') {

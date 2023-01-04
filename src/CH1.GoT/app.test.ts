@@ -11,8 +11,6 @@ mockData[0].communicate = jest.fn();
 const mockCommunicate = mockData[0].communicate as jest.Mock;
 const mockDead = mockData[0].dead as jest.Mock;
 
-//
-
 describe('Given got application', () => {
   describe('When it is call inside a HTML document', () => {
     beforeAll(async () => {

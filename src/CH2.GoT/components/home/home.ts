@@ -1,7 +1,7 @@
 import { Character } from '../../../CH1.GoT/models/character.js';
 import { createCharacters } from '../../../CH1.GoT/services/characters.js';
 import { Component } from '../../components/component/component.js';
-import { consoleDebug } from '../../tools/debug.js';
+import { consoleDebug } from '../../../lib/tools/debug.js';
 import { Card } from '../card/card.js';
 import { Communicate } from '../communicate/communicate.js';
 
@@ -37,7 +37,7 @@ export class HomePage extends Component {
   }
 
   handleCommunicate(characterName: string) {
-    consoleDebug('Habla ' + characterName);
+    consoleDebug(`Habla ${characterName}`);
     const character = this.characters.find(
       (item) => item.name === characterName
     ) as Character;
@@ -52,7 +52,7 @@ export class HomePage extends Component {
   }
 
   handleDead(characterName: string) {
-    consoleDebug('Muere' + characterName);
+    consoleDebug(`Muere ${characterName}`);
     const id = this.characters.findIndex((item) => item.name === characterName);
     this.characters[id].dead();
     this.render();
