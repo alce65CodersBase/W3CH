@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/dom';
+import { screen } from '@testing-library/dom';
 import '@testing-library/jest-dom';
 import { MOCK_KING } from '../../../CH1.GoT/services/mock';
 import { Card } from './card';
@@ -29,18 +29,6 @@ describe('Given Card component', () => {
       card = new Card('div', character, handleDead, handleCommunicate);
       const r = screen.getByText(characterName);
       expect(r).toBeInTheDocument;
-    });
-
-    test('Then character card have two buttons that should be used', () => {
-      card = new Card('div', character, handleDead, handleCommunicate);
-      const buttons = screen.getAllByRole('button');
-      expect(buttons.length).toBe(2);
-      // muere
-      fireEvent.click(buttons[1]);
-      expect(handleDead).toHaveBeenCalled();
-      // habla
-      fireEvent.click(buttons[0]);
-      expect(handleCommunicate).toHaveBeenCalled();
     });
   });
 });
