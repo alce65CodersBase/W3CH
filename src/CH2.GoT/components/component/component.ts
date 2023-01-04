@@ -6,14 +6,11 @@ export abstract class Component {
     return this.element;
   }
 
-  /**
-   * Renderiza un elemento en el selector recibido por parámetros
-   * añadiéndolo al principio o al final
-   * Retorna el elemento renderizado: primer o ultimo dentro del selector recibido
-   * @param selector
-   * @param position
-   * @returns
-   */
+  /*
+    Renderiza un elemento en el selector recibido por parámetros
+    añadiéndolo al principio o al final
+    Retorna el elemento renderizado: primer o ultimo dentro del selector recibido
+  */
   protected innRender(selector: string, position: 'start' | 'end' = 'end') {
     type validChild = 'firstElementChild' | 'lastElementChild';
     const positions = {
@@ -29,11 +26,9 @@ export abstract class Component {
     return this.element[child] as Element;
   }
 
-  /**
-   * Elimina el contenido del selector recibido
-   * @param selector
-   * @returns
-   */
+  /*
+    Elimina el contenido del selector recibido
+  */
   protected cleanHtml(selector: string) {
     this.element = this.selectElement(selector);
     this.element.innerHTML = '';

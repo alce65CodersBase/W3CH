@@ -1,5 +1,4 @@
 import { Component } from './component';
-// import { screen } from '@testing-library/dom';
 import '@testing-library/jest-dom';
 
 describe('Given a class that extends abstract class Component', () => {
