@@ -1,4 +1,5 @@
 import { Component } from '../../../lib/component/component';
+import header__ from './header.module.css';
 
 export class Header extends Component {
   constructor(private selector: string) {
@@ -13,9 +14,9 @@ export class Header extends Component {
 
   private createTemplate() {
     return `
-        <header>
+        <header class="${header__.container}">
             <h1>
-                Learning Components
+                Items CRUD
             </h1>
         </header>
         `;

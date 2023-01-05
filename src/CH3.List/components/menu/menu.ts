@@ -1,5 +1,6 @@
 import { Component } from '../../../lib/component/component.js';
 import { MenuOptionsType } from '../../types/menu.options.js';
+import menu__ from './menu.module.css';
 
 export class Menu extends Component {
   constructor(private selector: string, private menuOptions: MenuOptionsType) {
@@ -19,7 +20,7 @@ export class Menu extends Component {
 
     return `
         <nav class="menu">
-            <ul>
+            <ul class="${menu__.items}">
                 ${options}
             </ul>
         </nav>

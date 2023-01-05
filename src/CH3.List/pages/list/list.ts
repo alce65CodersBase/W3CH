@@ -1,4 +1,3 @@
-// import { List } from '../../components/todo.list/list.js';
 import { Component } from '../../../lib/component/component';
 import { consoleDebug } from '../../../lib/tools/debug';
 import { List } from '../../components/some.list/list/list';
