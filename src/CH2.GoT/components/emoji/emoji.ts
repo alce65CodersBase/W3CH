@@ -1,4 +1,4 @@
-import { Component } from '../component/component.js';
+import { Component } from '../../../lib/component/component.js';
 import { Character } from '../../../CH1.GoT/models/character';
 import emoji__ from './emoji.module.css';
 

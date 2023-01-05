@@ -1,4 +1,4 @@
-import { Component } from '../component/component';
+import { Component } from '../../../lib/component/component';
 import { Character } from '../../../CH1.GoT/models/character';
 import { BackCard } from '../back.card/back.card';
 import { Emoji } from '../emoji/emoji';

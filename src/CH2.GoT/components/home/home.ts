@@ -1,6 +1,6 @@
 import { Character } from '../../../CH1.GoT/models/character.js';
 import { createCharacters } from '../../../CH1.GoT/services/characters.js';
-import { Component } from '../../components/component/component.js';
+import { Component } from '../../../lib/component/component.js';
 import { consoleDebug } from '../../../lib/tools/debug.js';
 import { Card } from '../card/card.js';
 import { Communicate } from '../communicate/communicate.js';

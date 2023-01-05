@@ -1,5 +1,5 @@
 import { Character } from '../../../CH1.GoT/models/character';
-import { Component } from '../component/component';
+import { Component } from '../../../lib/component/component';
 import communicate__ from './communicate.module.css';
 
 export class Communicate extends Component {
