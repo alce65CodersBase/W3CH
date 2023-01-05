@@ -1,4 +1,4 @@
-import { Component } from '../component/component.js';
+import { Component } from '../../../lib/component/component.js';
 import { Character } from '../../../CH1.GoT/models/character';
 import { Counselor } from '../../../CH1.GoT/models/counselor';
 import { Fighter } from '../../../CH1.GoT/models/fighter';
