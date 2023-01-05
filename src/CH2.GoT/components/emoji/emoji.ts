@@ -1,6 +1,6 @@
 import { Component } from '../component/component.js';
 import { Character } from '../../../CH1.GoT/models/character';
-import style from './emoji.module.css';
+import emoji__ from './emoji.module.css';
 
 enum emoji {
   'king' = '👑',
@@ -22,8 +22,8 @@ export class Emoji extends Component {
   }
 
   private createTemplate() {
-    const classCSS = [style.emoji];
-    if (!this.character.isAlive) classCSS.push(style.rotate);
+    const classCSS = [emoji__.emoji];
+    if (!this.character.isAlive) classCSS.push(emoji__.rotate);
     const characterType: string = Object.getPrototypeOf(
       this.character
     ).constructor.name.toLowerCase();

@@ -1,18 +1,18 @@
-.character {
+.container {
   width: 20%;
   min-width: 15rem;
   flex-basis: auto;
   flex-grow: 0;
 }
-.character__name {
+.name {
   height: 60px;
 }
-.character__picture {
+.picture {
   object-fit: cover;
   object-position: top;
   height: 200px;
 }
-.character__card {
+.card {
   position: relative;
   border: none;
   background-color: #331c0e;

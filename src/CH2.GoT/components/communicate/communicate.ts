@@ -1,6 +1,6 @@
 import { Character } from '../../../CH1.GoT/models/character';
 import { Component } from '../component/component';
-import styles from './communicate.module.css';
+import communicate__ from './communicate.module.css';
 
 export class Communicate extends Component {
   constructor(private selector: string, private item: Character) {
@@ -15,9 +15,9 @@ export class Communicate extends Component {
 
   showCommunication() {
     const element = this.element as HTMLElement;
-    element.classList.toggle(styles.on);
+    element.classList.toggle(communicate__.on);
     setTimeout(() => {
-      element.classList.toggle(styles.on);
+      element.classList.toggle(communicate__.on);
       element.innerHTML = '';
     }, 2000);
   }
@@ -25,9 +25,9 @@ export class Communicate extends Component {
     const fullName = `${this.item.name} ${this.item.family}`;
     const image = `img/${this.item.name.toLowerCase()}.jpg`;
     const template = `
-    <div class="${styles.wrapper}">
-      <p class="${styles.text}">${this.item.communicate()}</p>
-      <img class="${styles.picture}" src="${image}" alt="${fullName}" />
+    <div class="${communicate__.wrapper}">
+      <p class="${communicate__.text}">${this.item.communicate()}</p>
+      <img class="${communicate__.picture}" src="${image}" alt="${fullName}" />
     </div>
 
     `;

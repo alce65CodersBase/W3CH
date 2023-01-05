@@ -4,7 +4,7 @@ import { Component } from '../../components/component/component.js';
 import { consoleDebug } from '../../../lib/tools/debug.js';
 import { Card } from '../card/card.js';
 import { Communicate } from '../communicate/communicate.js';
-import styles from './home.module.css';
+import home__ from './home.module.css';
 
 export class HomePage extends Component {
   characters: Array<Character>;
@@ -18,21 +18,22 @@ export class HomePage extends Component {
     this.render();
   }
 
-  render() {
+  render(): HTMLElement {
     super.cleanHtml(this.selector);
     const element = super.innRender(this.selector);
     const communicate = this.handleCommunicate.bind(this);
     const dead = this.handleDead.bind(this);
     this.characters.forEach((item) => {
-      const card = new Card(`.${styles.list}`, item, dead, communicate);
+      const card = new Card(`.${home__.list}`, item, dead, communicate);
       this.cards.push(card);
     });
-    return element;
+    return element as HTMLElement;
   }
 
   private createTemplate() {
-    return `<main class='${styles.container}' aria-label="Home">
-      <ul class="${styles.list} row list-unstyled cards-list"></ul>
+    return `
+    <main class='${home__.container}' aria-label="Home">
+      <ul class="${home__.list} row list-unstyled cards-list"></ul>
       <div class="communications"></div>
     </main>`;
   }

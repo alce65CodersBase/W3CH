@@ -4,7 +4,7 @@ import { Counselor } from '../../../CH1.GoT/models/counselor';
 import { Fighter } from '../../../CH1.GoT/models/fighter';
 import { King } from '../../../CH1.GoT/models/king';
 import { Squire } from '../../../CH1.GoT/models/squire';
-import styles from './back.card.module.css';
+import backCard__ from './back.card.module.css';
 
 type AnyCharacter = King & Fighter & Counselor & Squire;
 type Actions = 'muere' | 'habla';
@@ -59,17 +59,17 @@ export class BackCard extends Component {
       this.character as AnyCharacter,
       characterType
     );
-    const buttonClass = `${styles.action} btn`;
+    const buttonClass = `${backCard__.action} btn`;
     const isDisable = !this.character.isAlive && 'disabled';
 
     return `
-      <div class="${styles.overlay} character__overlay">
+      <div class="${backCard__.overlay} character__overlay">
         <ul class="list-unstyled">
           ${overlay}
         </ul>
-        <div class="${styles.actions}">
+        <div class="${backCard__.actions}">
           <button class="${buttonClass}" ${isDisable}
-            data-id=${styles.action + ' btn'}>
+            data-id=${backCard__.action + ' btn'}>
             habla</button>
           <button class="${buttonClass}" ${isDisable}
             data-id=${this.character.name}>
