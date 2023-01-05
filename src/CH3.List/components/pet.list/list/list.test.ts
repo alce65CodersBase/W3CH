@@ -1,7 +1,6 @@
 import { screen } from '@testing-library/dom';
 import '@testing-library/jest-dom';
 import { List } from './list';
-//import { Add } from '../todo.add/add';
 import * as debug from '../../../../lib/tools/debug';
 import { MOCK_DOG } from '../../../models/mock';
 import { Card } from '../card/card';

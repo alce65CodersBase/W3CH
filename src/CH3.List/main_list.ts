@@ -1,7 +1,7 @@
 import { consoleDebug } from '../lib/tools/debug';
 import { App } from './components/app/app';
 
-console.log('Loaded App');
+consoleDebug('Loaded App');
 
 try {
   new App();

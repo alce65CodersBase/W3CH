@@ -24,7 +24,8 @@ export abstract class Component {
       this.template
     );
     const child = positions[position].child as validChild;
-    return this.element[child] as Element;
+    this.element = this.element[child];
+    return this.element as Element;
   }
 
   /*
