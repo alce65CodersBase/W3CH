@@ -1,10 +1,17 @@
-import { screen } from '@testing-library/dom';
+import { fireEvent, screen } from '@testing-library/dom';
 // adds special assertions like toHaveTextContent
 import '@testing-library/jest-dom';
 import { HomePage } from './home';
 
 describe('Given "HomePage" component', () => {
   document.body.innerHTML = `<main></main>`;
+
+  HTMLDialogElement.prototype.showModal = jest.fn(function mock(
+    this: HTMLDialogElement
+  ) {
+    this.open = true;
+  });
+
   const homePage = new HomePage('main');
   const elements = [
     screen.getByRole('heading', { name: 'Home' }), // <h2>
@@ -21,4 +28,14 @@ describe('Given "HomePage" component', () => {
       });
     }
   );
+  describe('When the user click the button', () => {
+    test('Modal should be rendered and open', () => {
+      const button = screen.getByRole('button');
+      fireEvent.click(button);
+      const modalTitle = screen.getByRole('heading', {
+        name: 'Mascotas',
+      });
+      expect(modalTitle).toBeInTheDocument();
+    });
+  });
 });
