@@ -1,5 +1,5 @@
 import { App } from './components/app/app';
-import { consoleDebug } from './tools/debug';
+import { consoleDebug } from '../lib/tools/debug';
 
 console.log('Loaded App');
 

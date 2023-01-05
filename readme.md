@@ -83,17 +83,33 @@ export default {
 
 ### Instalación Testing-Library
 
+```shell
 npm i -D jest-environment-jsdom
 npm i -D @testing-library/dom -> render, screen...
 npm i -D @testing-library/jest-dom -> matchers extra
 npm i -D @testing-library/user-event
-
-("@types/testing-library__dom": "^7.5.0")
+```
 
 - Config: jest.config.ts
 
 ```js
   { testEnvironment: 'jsdom', }
+```
+
+### Soporte de css modules en Jest
+
+```shell
+npm i -D identity-obj-proxy
+```
+
+- Config: jest.config.ts
+
+```js
+  { moduleNameMapper: {
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/__mocks__/fileMock.js',
+    '\\.(css|less)$': 'identity-obj-proxy',
+  }, }
 ```
 
 ## Day 1. GoT

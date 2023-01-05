@@ -1,3 +1,4 @@
+import { consoleDebug } from '../lib/tools/debug';
 import { Character } from './models/character';
 import { getCardTemplate } from './templates/card';
 import { getCommunicationsTemplate } from './templates/communica';
@@ -15,7 +16,7 @@ const renderCards = (selector: HTMLElement) => {
 };
 
 const handleCommunicate = (characterName: string) => {
-  console.log('Habla', characterName);
+  consoleDebug(`Habla ${characterName}`);
   const character = characters.find(
     (item) => item.name === characterName
   ) as Character;
@@ -32,7 +33,7 @@ const handleCommunicate = (characterName: string) => {
 };
 
 const handleDead = (characterName: string) => {
-  console.log('Muere', characterName);
+  consoleDebug(`Muere ${characterName}`);
   const id = characters.findIndex((item) => item.name === characterName);
   characters[id].dead();
   appGoT(characters);

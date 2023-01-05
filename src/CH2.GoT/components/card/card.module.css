@@ -1,0 +1,21 @@
+.container {
+  width: 20%;
+  min-width: 15rem;
+  flex-basis: auto;
+  flex-grow: 0;
+}
+.name {
+  height: 60px;
+}
+.picture {
+  object-fit: cover;
+  object-position: top;
+  height: 200px;
+}
+.card {
+  position: relative;
+  border: none;
+  background-color: #331c0e;
+  color: #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}

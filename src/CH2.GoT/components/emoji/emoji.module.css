@@ -1,0 +1,10 @@
+.emoji {
+  font-style: normal;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
