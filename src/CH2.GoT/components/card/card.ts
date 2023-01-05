@@ -2,6 +2,7 @@ import { Component } from '../component/component';
 import { Character } from '../../../CH1.GoT/models/character';
 import { BackCard } from '../back.card/back.card';
 import { Emoji } from '../emoji/emoji';
+import styles from './card.module.css';
 
 export class Card extends Component {
   back!: BackCard;
@@ -37,16 +38,16 @@ export class Card extends Component {
       : '<i class="fas fa-thumbs-down"></i>';
 
     return `
-      <li class="character col">
-        <div class="card character__card card-${this.character.name}">
+      <li class="${styles.character} col character">
+        <div class="card ${styles.character__card} card-${this.character.name}">
           <img
             src="${image}"
             alt="${fullName}"
-            class="character__picture card-img-top"
+            class="${styles.character__picture} card-img-top"
           />
           <div class="card-body">
-            <h2 class="character__name card-title h4">${fullName}</h2>
-            <div class="character__info">
+            <h2 class="${styles.character__name} card-title h4">${fullName}</h2>
+            <div class="${styles.character__info}">
               <ul class="list-unstyled">
                 <li>Edad: ${this.character.age} años</li>
                 <li>Estado: ${state}</li>

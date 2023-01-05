@@ -1,0 +1,21 @@
+.character {
+  width: 20%;
+  min-width: 15rem;
+  flex-basis: auto;
+  flex-grow: 0;
+}
+.character__name {
+  height: 60px;
+}
+.character__picture {
+  object-fit: cover;
+  object-position: top;
+  height: 200px;
+}
+.character__card {
+  position: relative;
+  border: none;
+  background-color: #331c0e;
+  color: #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}

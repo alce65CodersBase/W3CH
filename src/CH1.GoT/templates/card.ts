@@ -70,7 +70,7 @@ export const getCardTemplate = (item: Character) => {
       <i class="emoji">
         ${emoji[characterType as keyof typeof emoji]}
       </i>
-    </div>;
+    </div>
   `;
   return template;
 };

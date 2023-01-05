@@ -4,6 +4,7 @@ import { Component } from '../../components/component/component.js';
 import { consoleDebug } from '../../../lib/tools/debug.js';
 import { Card } from '../card/card.js';
 import { Communicate } from '../communicate/communicate.js';
+import styles from './home.module.css';
 
 export class HomePage extends Component {
   characters: Array<Character>;
@@ -23,15 +24,15 @@ export class HomePage extends Component {
     const communicate = this.handleCommunicate.bind(this);
     const dead = this.handleDead.bind(this);
     this.characters.forEach((item) => {
-      const card = new Card('.characters-list', item, dead, communicate);
+      const card = new Card(`.${styles.list}`, item, dead, communicate);
       this.cards.push(card);
     });
     return element;
   }
 
   private createTemplate() {
-    return `<main class='container' aria-label="Home">
-      <ul class="characters-list row list-unstyled"></ul>
+    return `<main class='${styles.container}' aria-label="Home">
+      <ul class="${styles.list} row list-unstyled cards-list"></ul>
       <div class="communications"></div>
     </main>`;
   }
@@ -41,14 +42,8 @@ export class HomePage extends Component {
     const character = this.characters.find(
       (item) => item.name === characterName
     ) as Character;
-
     const component = new Communicate('.communications', character);
-    const element = component.getElement() as HTMLElement;
-    element.classList.toggle('on');
-    setTimeout(() => {
-      element.classList.toggle('on');
-      element.innerHTML = '';
-    }, 2000);
+    component.showCommunication();
   }
 
   handleDead(characterName: string) {
