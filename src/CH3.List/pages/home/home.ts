@@ -14,8 +14,7 @@ export class HomePage extends Component {
   private createTemplate() {
     return `
         <main>
-            <h2>Home</h2>
-            <slot name="home"></slot>
+          <h2 aria-label="Home">Listas de componentes</h2>
         </main>
         `;
   }

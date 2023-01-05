@@ -11,7 +11,7 @@ export class App {
   constructor() {
     this.menuOptions = [
       { path: './index.html', label: 'Home' },
-      { path: './list.html', label: 'List' },
+      { path: './pets-list.html', label: 'Pets' },
       // Add more options { path: './about.html', label: 'About' },
     ];
     try {

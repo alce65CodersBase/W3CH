@@ -1,6 +1,6 @@
 import { Component } from '../../../lib/component/component';
 import { consoleDebug } from '../../../lib/tools/debug';
-import { List } from '../../components/some.list/list/list';
+import { List } from '../../components/pet.list/list/list';
 
 export class ListPage extends Component {
   constructor(private selector: string) {
@@ -8,7 +8,7 @@ export class ListPage extends Component {
     this.template = this.createTemplate();
     this.render();
     try {
-      new List('.todo-wrapper');
+      new List('div.list-slot');
     } catch (error) {
       consoleDebug((error as Error).message);
     }
@@ -21,8 +21,8 @@ export class ListPage extends Component {
   private createTemplate() {
     return `
         <main>
-            <h2 aria-label="List">Lista de ...</h2>
-            <div class="todo-wrapper"></div>
+            <h2 aria-label="Pets">Mascotas</h2>
+            <div class="list-slot"></div>
         </main>
         `;
   }

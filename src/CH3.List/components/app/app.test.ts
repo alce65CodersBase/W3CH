@@ -33,7 +33,7 @@ describe('Given and instantiate "App" class', () => {
   });
   describe('When location include a pathname "./list.html"', () => {
     test('Then the component AboutPage, should be instantiated', () => {
-      global.window.location.pathname = './list.html';
+      global.window.location.pathname = './pets-list.html';
       const app = new App();
       expect(app).toBeInstanceOf(App);
       expect(ListPage).toHaveBeenCalled();
