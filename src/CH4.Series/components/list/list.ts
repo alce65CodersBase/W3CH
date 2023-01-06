@@ -12,7 +12,7 @@ export class List extends Component {
   }
   render() {
     const element = super.innRender(this.selector);
-    const child = new SeriesCard(`ul.series-list`);
+    const child = new SeriesCard(`ul.cards-slot`);
     this.children.push(child);
     return element;
   }
@@ -20,10 +20,12 @@ export class List extends Component {
   private createTemplate() {
     return `
         <section class="series-pending ${list__.container} lista" role="presentation" aria-label="List">
-          <h3 class="subsection-title">Pending series</h3>
-          <p class="info">You have 4 series pending to watch</p>
-          <!--<p class="info">Congrats! You've watched all your series</p>-->
-          <ul class="series-list"></ul>
+          <h3 class="${list__.subsectionTitle}">Pending series</h3>
+          <p class="${list__.info}">You have 4 series pending to watch</p>
+          <!--<p class="${list__.info}">Congrats! You've watched all your series</p>-->
+          <ul class="${list__.seriesList} cards-slot">
+           <!--A continuación se inyectan los componentes SeriesCard-->
+          </ul>
         </section>
         `;
   }

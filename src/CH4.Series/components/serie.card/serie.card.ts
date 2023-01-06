@@ -19,16 +19,14 @@ export class SeriesCard extends Component {
 
   private createTemplate() {
     return `
-        <li class="serie ${card__.container} serie-slot" role="presentation" aria-label="Serie">
-          <img class="serie__poster"
+        <li class="${card__.container} serie-slot" role="presentation" aria-label="Serie">
+          <img class="${card__.seriePoster}"
             src="https://m.media-amazon.com/images/M/MV5BZGJjYzhjYTYtMDBjYy00OWU1LTg5OTYtNmYwOTZmZjE3ZDdhXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
             alt="The Sopranos poster" />
-          <h4 class="serie__title">The Sopranos</h4>
-          <p class="serie__info">David Chase (1999)</p>
-          <ul class="score">
-
-          </ul>
-          <i class="fas fa-times-circle icon--delete"></i>
+          <h4 class="${card__.serieTitle}">The Sopranos</h4>
+          <p class="${card__.serieInfo}">David Chase (1999)</p>
+          <ul class="${card__.score}"></ul>
+          <i class="fas fa-times-circle ${card__['icon--delete']}"></i>
         </li>
         `;
   }

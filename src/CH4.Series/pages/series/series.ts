@@ -1,6 +1,7 @@
 import { Component } from '../../../lib/component/component';
 import { Header } from '../../components/header/header';
 import { List } from '../../components/list/list';
+import series__ from './series.module.css';
 
 export class SeriesPage extends Component {
   children: Array<Component>;
@@ -25,11 +26,11 @@ export class SeriesPage extends Component {
 
   private createTemplate() {
     return `
-      <div class="container" aria-label="Series">
+      <div class="${series__.container} container" aria-label="Series">
         <!--Antes Se inyecta el componente header-->
         <main class="main">
           <section class="series">
-            <h2 class="section-title">Series list</h2>
+            <h2 class="${series__.sectionTitle}">Series list</h2>
             <!--A continuación se inyecta el componente List-->
           </section>
         </main>

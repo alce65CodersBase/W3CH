@@ -41,62 +41,12 @@ li {
 img {
   max-width: 100%;
 }
-.container {
-  max-width: 950px;
-  margin: 0 auto;
-  padding: 20px;
-}
-.main-header {
-  height: 80px;
-  display: flex;
-  align-items: center;
-}
-.series,
+
 .stats,
 .directors {
   padding: 20px 0;
 }
-.section-title,
-.subsection-title {
-  margin: 10px 0;
-  font-weight: 500;
-}
-.info {
-  font-size: 0.9em;
-}
-.series-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.serie {
-  width: 24%;
-  height: 422px;
-  margin-bottom: 20px;
-  position: relative;
-}
-.serie .icon--delete {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  cursor: pointer;
-  display: none;
-}
-.serie:hover .icon--delete {
-  display: block;
-}
-.serie__poster {
-  height: 300px;
-  width: 100%;
-  object-fit: cover;
-}
-.serie__title {
-  font-weight: 500;
-}
-.score {
-  display: flex;
-}
+
 .series-list--watched .icon--score {
   cursor: pointer;
 }
