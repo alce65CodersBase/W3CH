@@ -1,0 +1,49 @@
+.container {
+  min-width: 30rem;
+}
+
+.title {
+  margin-block-start: 0;
+  padding: 0;
+}
+
+.label {
+  display: block;
+  padding-block-end: 0.5rem;
+}
+
+.input {
+  border: none;
+  border-block-end: 2px solid gainsboro;
+  width: 100%;
+  margin-block-end: 1rem;
+}
+
+.options {
+  border: 1px solid gainsboro;
+  padding-block-start: 1rem;
+  margin-block-end: 1rem;
+  width: 100%;
+}
+
+.options .input {
+  width: 80%;
+}
+
+.button {
+  border: none;
+  padding: 0.6rem 1rem;
+  background-color: maroon;
+  color: bisque;
+  font-weight: 500;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.error {
+  border: 1px solid gainsboro;
+  padding: 0.5rem 1rem;
+  color: maroon;
+  font-size: 0.8rem;
+}

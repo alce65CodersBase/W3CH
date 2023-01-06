@@ -1,0 +1,9 @@
+.container {
+  flex: 1 0 auto;
+  color: bisque;
+  background-color: brown;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2rem;
+}
