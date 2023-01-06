@@ -5,7 +5,9 @@ import { Header } from './header';
 describe('Given "Header" component', () => {
   document.body.innerHTML = `<slot></slot>`;
   const header = new Header('slot');
-  const elements = [screen.getByRole('generic')];
+  const elements = [
+    screen.getByRole('presentation', { name: 'Header', hidden: true }),
+  ];
   test('Then we should to be able to instantiate it', () => {
     expect(header).toBeInstanceOf(Header);
   });

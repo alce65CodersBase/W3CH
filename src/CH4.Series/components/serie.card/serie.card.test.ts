@@ -5,7 +5,9 @@ import { SeriesCard } from './serie.card';
 describe('Given "SeriesCard" component', () => {
   document.body.innerHTML = `<slot></slot>`;
   const card = new SeriesCard('slot');
-  const elements = [screen.getByRole('generic')];
+  const elements = [
+    screen.getByRole('presentation', { name: 'Serie', hidden: true }),
+  ];
   test('Then we should to be able to instantiate it', () => {
     expect(card).toBeInstanceOf(SeriesCard);
   });

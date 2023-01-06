@@ -1,5 +1,5 @@
 import { Component } from '../../../lib/component/component';
-import score__ from './score.module.css';
+import score__ from './score.stars.module.css';
 
 export class ScoreStars extends Component {
   constructor(private selector: string) {
@@ -8,13 +8,14 @@ export class ScoreStars extends Component {
     this.render();
   }
   render() {
-    return super.innRender(this.selector);
+    const element = super.innRender(this.selector);
+    return element;
   }
 
   private createTemplate() {
     return `
-        <div class="${score__.container}" role="generic">
-            List
+        <div class="${score__.container}" role="presentation" aria-label="Stars">
+          Stars
         </div>
         `;
   }

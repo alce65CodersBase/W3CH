@@ -13,7 +13,7 @@ export class Header extends Component {
 
   private createTemplate() {
     return `
-        <div class="${header__.container}" role="generic">
+        <div class="${header__.container}" role="presentation" aria-label="Header">
             Header
         </div>
         `;
