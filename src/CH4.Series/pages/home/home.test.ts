@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/dom';
+import { screen } from '@testing-library/dom';
 // adds special assertions like toHaveTextContent
 import '@testing-library/jest-dom';
 import { HomePage } from './home';
