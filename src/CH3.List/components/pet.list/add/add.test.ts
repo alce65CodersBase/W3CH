@@ -9,7 +9,7 @@ describe('Given "Add" component', () => {
   document.body.innerHTML = `<slot></slot>`;
   const add = new Add('slot', handleAdd);
   const elements = [
-    screen.getByRole('heading', { name: 'Añadir tarea' }), // <h1>
+    screen.getByRole('heading', { name: 'Añadir mascota' }), // <h1>
     ...screen.getAllByRole('textbox'), // <input>
     screen.getByRole('button'),
   ];
@@ -26,8 +26,8 @@ describe('Given "Add" component', () => {
     }
   );
 
-  describe('When data are provided in the form', () => {
-    const mockName = 'Test name';
+  describe('When data required are provided in the form', () => {
+    const mockName = 'Pet';
     const mockKind = 'Perro';
     test('Then data form could bee used ', async () => {
       const user = userEvent.setup();
@@ -35,7 +35,8 @@ describe('Given "Add" component', () => {
       await user.type(elements[2], mockKind);
       expect(elements[1]).toHaveValue(mockName);
       expect(elements[2]).toHaveValue(mockKind);
-      await user.click(elements[3]);
+      const button = elements.find((item) => item instanceof HTMLButtonElement);
+      await user.click(button as HTMLButtonElement);
       expect(handleAdd).toHaveBeenCalled();
     });
   });

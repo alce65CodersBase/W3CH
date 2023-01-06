@@ -9,6 +9,12 @@ describe('Given "List" component', () => {
   document.body.innerHTML = `
     <slot name="slot1"></slot>
     <slot name="slot2"></slot>`;
+  HTMLDialogElement.prototype.showModal = jest.fn(function mock(
+    this: HTMLDialogElement
+  ) {
+    this.open = true;
+  });
+
   const list = new List('slot[name="slot1"]');
   const element = screen.getByRole('list');
   describe('When it is call with a DOM implementation', () => {
@@ -51,6 +57,10 @@ describe('Given "List" component', () => {
     test('Then if ts call deletePet() the pets array should be returned without the deleted item', () => {
       list.deletePet(list.pets[0].id);
       expect(list.pets.length).toBe(initialPets.length - 1);
+    });
+    test('Then if it is call handleAdd(), a modal should be rendered', () => {
+      list.handleAdd();
+      expect(HTMLDialogElement.prototype.showModal).toHaveBeenCalled();
     });
   });
 });

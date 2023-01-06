@@ -1,7 +1,9 @@
 import { Component } from '../../../../lib/component/component';
+import { Modal } from '../../../../lib/modal/modal';
 import { consoleDebug } from '../../../../lib/tools/debug';
 import { MOCK_DATA_CAT, MOCK_DATA_DOG } from '../../../models/mock';
-import { IdPetStructure, Pet } from '../../../models/pet';
+import { IdPetStructure, Pet, PetStructure } from '../../../models/pet';
+import { Add } from '../add/add';
 import { Card } from '../card/card';
 import list__ from './list.module.css';
 
@@ -22,7 +24,6 @@ export class List extends Component {
     this.template = this.createTemplate();
     this.render();
     try {
-      // new Add('section.pets', this.addPet.bind(this));
       this.pets.forEach(
         (item) =>
           new Card(
@@ -39,11 +40,24 @@ export class List extends Component {
 
   render() {
     super.cleanHtml(this.selector);
-    return super.innRender(this.selector);
+    const element = super.innRender(this.selector);
+    const addButton = element.querySelector('button[title="Nueva mascota"]');
+    addButton?.addEventListener('click', this.handleAdd.bind(this));
+    return element;
   }
 
-  addPet(task: Pet) {
-    this.pets = [...this.pets, task];
+  handleAdd() {
+    const modal = new Modal(
+      'section.pets',
+      `<div class="${list__.addSlot}" id="add-slot"></div>`,
+      'Cancelar'
+    );
+    new Add('div#add-slot', this.addPet.bind(this));
+    modal.show();
+  }
+
+  addPet(pet: IdPetStructure) {
+    this.pets = [pet, ...this.pets];
     this.manageComponent();
     return this.pets;
   }
@@ -63,6 +77,7 @@ export class List extends Component {
   private createTemplate() {
     return `
         <section class="pets" aria-label='pets'>
+            <button aria-label="add" title="Nueva mascota" class="${list__.add}">➕</button>
             <ul class="${list__.container} items-slot"></ul>
         </section>
         `;

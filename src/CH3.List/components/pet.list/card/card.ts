@@ -42,8 +42,8 @@ export class Card extends Component {
 
   private createTemplate() {
     return `
-    <li class="item-task" id="item_${this.item.id}">
-      <article class="${card__.container}" id="item_${this.item.id}">
+    <li class="${card__.container} item-task" id="item_${this.item.id}">
+      <article class="${card__.article}" id="item_${this.item.id}">
         <div class="${card__.title}">
           <h2 class="name">${this.item.name}</h2>
           <label for="">
