@@ -7,6 +7,9 @@ import { List } from '../../components/pet.list/list/list';
 
 describe('Given "ListPage" component', () => {
   document.body.innerHTML = `<main></main>`;
+  List.prototype.initializePets = jest.fn().mockImplementation(() => {
+    return [];
+  });
   describe('When it is instantiated with a valid selector', () => {
     const listPage = new ListPage('main');
     const elements = [
@@ -27,13 +30,13 @@ describe('Given "ListPage" component', () => {
   });
 
   describe('When the child component has a NON valid selector', () => {
-    List.prototype.render = jest.fn().mockImplementation(() => {
+    List.prototype.initializePets = jest.fn().mockImplementation(() => {
       throw new Error('Invalid selector');
     });
     const debugSpy = jest.spyOn(debug, 'consoleDebug');
     const listPage = new ListPage('main');
     expect(listPage).toBeInstanceOf(ListPage);
-    expect(List.prototype.render).toBeCalled();
+    expect(List.prototype.initializePets).toBeCalled();
     expect(debugSpy).toBeCalled();
   });
 

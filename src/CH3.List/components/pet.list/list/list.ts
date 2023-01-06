@@ -1,23 +1,28 @@
 import { Component } from '../../../../lib/component/component';
 import { Modal } from '../../../../lib/modal/modal';
 import { consoleDebug } from '../../../../lib/tools/debug';
-import { MOCK_DATA_CAT, MOCK_DATA_DOG } from '../../../models/mock';
 import { IdPetStructure, Pet } from '../../../models/pet';
+import {
+  getPets,
+  savePets,
+} from '../../../services/repository/repository.local';
 import { Add } from '../add/add';
 import { Card } from '../card/card';
 import list__ from './list.module.css';
-
-function initializePets(): IdPetStructure[] {
-  return [MOCK_DATA_DOG, MOCK_DATA_CAT];
-}
 
 export class List extends Component {
   pets: Array<IdPetStructure>;
   components: Array<Component>;
   constructor(private selector: string) {
     super();
-    this.pets = initializePets();
+    this.pets = [];
     this.components = [];
+    this.initializePets();
+  }
+
+  async initializePets() {
+    this.pets = await getPets();
+    // con tiempo de retraso this.pets = await getPetsDelay()
     this.manageComponent();
   }
 
@@ -61,6 +66,7 @@ export class List extends Component {
 
   addPet(pet: IdPetStructure) {
     this.pets = [pet, ...this.pets];
+    savePets(this.pets);
     this.manageComponent();
     return this.pets;
   }
@@ -68,11 +74,13 @@ export class List extends Component {
     this.pets = this.pets.map((item) =>
       item.id === id ? { ...item, ...data } : item
     );
+    savePets(this.pets);
     this.manageComponent();
     return this.pets;
   }
   deletePet(id: string) {
     this.pets = this.pets.filter((item) => item.id !== id);
+    savePets(this.pets);
     this.manageComponent();
     return this.pets;
   }
