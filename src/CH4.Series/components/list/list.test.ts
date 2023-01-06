@@ -5,9 +5,7 @@ import { List } from './list';
 describe('Given "List" component', () => {
   document.body.innerHTML = `<slot></slot>`;
   const list = new List('slot');
-  const elements = [
-    screen.getByRole('presentation', { name: 'List', hidden: true }),
-  ];
+  const elements = [screen.getByRole('region', { name: 'series-pending' })];
   test('Then we should to be able to instantiate it', () => {
     expect(list).toBeInstanceOf(List);
   });

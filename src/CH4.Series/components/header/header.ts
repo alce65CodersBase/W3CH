@@ -13,9 +13,8 @@ export class Header extends Component {
 
   private createTemplate() {
     return `
-      <header class="${header__.container} main-header"
-        role="presentation" aria-label="Header">
-        <h1 class="main-title">My Series</h1>
+      <header class="${header__.container}">
+        <h1 class="${header__.title}">My Series</h1>
       </header>
     `;
   }

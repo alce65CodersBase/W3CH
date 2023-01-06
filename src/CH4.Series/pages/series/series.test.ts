@@ -7,7 +7,7 @@ describe('Given "SeriesPage" component', () => {
   document.body.innerHTML = `<main></main>`;
   const homePage = new SeriesPage('main');
   const elements = [
-    screen.getByRole('heading', { name: 'Series' }), // <h2>
+    screen.getByRole('heading', { name: 'Series list' }), // <h2>
   ];
   test('Then we should to be able to instantiate it', () => {
     expect(homePage).toBeInstanceOf(SeriesPage);

@@ -12,20 +12,20 @@ export class SeriesCard extends Component {
   }
   render() {
     const element = super.innRender(this.selector);
-    const child = new ScoreStars(`.score`);
+    const child = new ScoreStars(`.score-slot`);
     this.children.push(child);
     return element;
   }
 
   private createTemplate() {
     return `
-        <li class="${card__.container} serie-slot" role="presentation" aria-label="Serie">
+        <li class="${card__.container}" aria-label="Serie">
           <img class="${card__.seriePoster}"
             src="https://m.media-amazon.com/images/M/MV5BZGJjYzhjYTYtMDBjYy00OWU1LTg5OTYtNmYwOTZmZjE3ZDdhXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
             alt="The Sopranos poster" />
           <h4 class="${card__.serieTitle}">The Sopranos</h4>
           <p class="${card__.serieInfo}">David Chase (1999)</p>
-          <ul class="${card__.score}"></ul>
+          <ul class="${card__.score} score-slot"></ul>
           <i class="fas fa-times-circle ${card__['icon--delete']}"></i>
         </li>
         `;

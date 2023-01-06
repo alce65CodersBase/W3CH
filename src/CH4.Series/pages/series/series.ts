@@ -14,9 +14,9 @@ export class SeriesPage extends Component {
 
   render() {
     const element = super.innRender(this.selector);
-    const child = new Header('.container');
+    const child = new Header('.header-slot');
     this.children.push(child);
-    const child2 = new List('section.series');
+    const child2 = new List('section.list-slot');
     this.children.push(child2);
     // Segunda lista para series vistas
     // const child3 = new List('main');
@@ -26,10 +26,10 @@ export class SeriesPage extends Component {
 
   private createTemplate() {
     return `
-      <div class="${series__.container} container" aria-label="Series">
+      <div class="${series__.container} header-slot">
         <!--Antes Se inyecta el componente header-->
         <main class="main">
-          <section class="series">
+          <section class="list-slot">
             <h2 class="${series__.sectionTitle}">Series list</h2>
             <!--A continuación se inyecta el componente List-->
           </section>
