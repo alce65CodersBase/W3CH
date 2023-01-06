@@ -12,16 +12,19 @@ export class List extends Component {
   }
   render() {
     const element = super.innRender(this.selector);
-    const child = new SeriesCard(`.lista`);
+    const child = new SeriesCard(`ul.series-list`);
     this.children.push(child);
     return element;
   }
 
   private createTemplate() {
     return `
-        <div class="${list__.container} lista" role="presentation" aria-label="List">
-            List
-        </div>
+        <section class="series-pending ${list__.container} lista" role="presentation" aria-label="List">
+          <h3 class="subsection-title">Pending series</h3>
+          <p class="info">You have 4 series pending to watch</p>
+          <!--<p class="info">Congrats! You've watched all your series</p>-->
+          <ul class="series-list"></ul>
+        </section>
         `;
   }
 }

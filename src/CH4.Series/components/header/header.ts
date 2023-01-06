@@ -8,14 +8,15 @@ export class Header extends Component {
     this.render();
   }
   render() {
-    return super.innRender(this.selector);
+    return super.innRender(this.selector, 'start');
   }
 
   private createTemplate() {
     return `
-        <div class="${header__.container}" role="presentation" aria-label="Header">
-            Header
-        </div>
-        `;
+      <header class="${header__.container} main-header"
+        role="presentation" aria-label="Header">
+        <h1 class="main-title">My Series</h1>
+      </header>
+    `;
   }
 }

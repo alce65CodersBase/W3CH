@@ -14,9 +14,22 @@ export class ScoreStars extends Component {
 
   private createTemplate() {
     return `
-        <div class="${score__.container}" role="presentation" aria-label="Stars">
-          Stars
-        </div>
+        <div class="${score__.container}" role="presentation" aria-label="Stars"></div>
+        <li class="score__star">
+          <i class="icon--score fas fa-star" title="1/5"></i>
+        </li>
+        <li class="score__star">
+          <i class="icon--score fas fa-star" title="2/5"></i>
+        </li>
+        <li class="score__star">
+          <i class="icon--score fas fa-star" title="3/5"></i>
+        </li>
+        <li class="score__star">
+          <i class="icon--score fas fa-star" title="4/5"></i>
+        </li>
+        <li class="score__star">
+          <i class="icon--score fas fa-star" title="5/5"></i>
+        </li>
         `;
   }
 }
