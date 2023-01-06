@@ -19,8 +19,8 @@ export class SeriesPage extends Component {
     const child2 = new List('section.list-slot');
     this.children.push(child2);
     // Segunda lista para series vistas
-    // const child3 = new List('main');
-    // this.children.push(child3);
+    const child3 = new List('section.list-slot', 'series-watched');
+    this.children.push(child3);
     return element;
   }
 

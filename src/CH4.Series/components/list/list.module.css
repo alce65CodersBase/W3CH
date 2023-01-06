@@ -1,9 +1,12 @@
 .container {
+  border: 1px solid gainsboro;
+  margin-block-end: 1rem;
 }
 
 .subsectionTitle {
   margin: 10px 0;
   font-weight: 500;
+  color: brown;
 }
 .info {
   font-size: 0.9em;
