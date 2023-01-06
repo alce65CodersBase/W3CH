@@ -1,4 +1,5 @@
 import { Component } from '../../../lib/component/component';
+import footer__ from './footer.module.css';
 
 export class Footer extends Component {
   constructor(private selector: string) {
@@ -12,7 +13,7 @@ export class Footer extends Component {
 
   private createTemplate() {
     return `
-        <footer>
+        <footer class="${footer__.container}">
             <address>
                 ISDI Coders
             </address>
