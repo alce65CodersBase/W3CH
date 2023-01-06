@@ -1,4 +1,6 @@
-export const SERIES = [
+import { Series } from '../models/series';
+
+export const MOCK_SERIES: Array<Series> = [
   {
     id: 1,
     name: 'The Sopranos',
