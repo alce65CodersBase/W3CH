@@ -13,10 +13,11 @@ function initializePets(): IdPetStructure[] {
 
 export class List extends Component {
   pets: Array<IdPetStructure>;
-  components!: Array<Component>;
+  components: Array<Component>;
   constructor(private selector: string) {
     super();
     this.pets = initializePets();
+    this.components = [];
     this.manageComponent();
   }
 
