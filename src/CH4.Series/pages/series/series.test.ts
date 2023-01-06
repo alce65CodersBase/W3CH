@@ -1,16 +1,16 @@
 import { screen } from '@testing-library/dom';
 // adds special assertions like toHaveTextContent
 import '@testing-library/jest-dom';
-import { HomePage } from './home';
+import { SeriesPage } from './series';
 
-describe('Given "HomePage" component', () => {
+describe('Given "SeriesPage" component', () => {
   document.body.innerHTML = `<main></main>`;
-  const homePage = new HomePage('main');
+  const homePage = new SeriesPage('main');
   const elements = [
-    screen.getByRole('heading', { name: 'Home' }), // <h2>
+    screen.getByRole('heading', { name: 'Series' }), // <h2>
   ];
   test('Then we should to be able to instantiate it', () => {
-    expect(homePage).toBeInstanceOf(HomePage);
+    expect(homePage).toBeInstanceOf(SeriesPage);
   });
   describe.each(elements)(
     'When it is call with a DOM implementation',

@@ -1,6 +1,6 @@
 import { Component } from '../../../lib/component/component';
 
-export class HomePage extends Component {
+export class SeriesPage extends Component {
   constructor(private selector: string) {
     super();
     this.template = this.createTemplate();
@@ -15,7 +15,7 @@ export class HomePage extends Component {
   private createTemplate() {
     return `
         <main>
-          <h2 aria-label="Home">Series</h2>
+          <h2 aria-label="Series">Series</h2>
         </main>
         `;
   }
