@@ -2,7 +2,7 @@ import { Component } from '../../../../lib/component/component';
 import { Modal } from '../../../../lib/modal/modal';
 import { consoleDebug } from '../../../../lib/tools/debug';
 import { MOCK_DATA_CAT, MOCK_DATA_DOG } from '../../../models/mock';
-import { IdPetStructure, Pet, PetStructure } from '../../../models/pet';
+import { IdPetStructure, Pet } from '../../../models/pet';
 import { Add } from '../add/add';
 import { Card } from '../card/card';
 import list__ from './list.module.css';
@@ -13,6 +13,7 @@ function initializePets(): IdPetStructure[] {
 
 export class List extends Component {
   pets: Array<IdPetStructure>;
+  components!: Array<Component>;
   constructor(private selector: string) {
     super();
     this.pets = initializePets();
@@ -52,7 +53,8 @@ export class List extends Component {
       `<div class="${list__.addSlot}" id="add-slot"></div>`,
       'Cancelar'
     );
-    new Add('div#add-slot', this.addPet.bind(this));
+    const add = new Add('div#add-slot', this.addPet.bind(this));
+    this.components.push(add);
     modal.show();
   }
 
