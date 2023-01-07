@@ -7,7 +7,7 @@ export class List extends Component {
   children: Array<Component>;
   constructor(
     private selector: string,
-    private filter: string = 'series-pending',
+    private filter: 'series-watched' | 'series-pending',
     private series: Array<Series>,
     private updateScore?: (serie: Series, score: number) => void
   ) {

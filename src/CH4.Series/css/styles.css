@@ -52,9 +52,14 @@ img {
   vertical-align: middle;
 }
 
-.series-list--watched .icon--score {
+.series-pending .icon--score {
   cursor: pointer;
+  transition: transform 1s;
 }
+.series-pending .icon--score:hover {
+  transform: scale(1.2);
+}
+
 .ranking-list {
   display: flex;
   justify-content: space-between;
