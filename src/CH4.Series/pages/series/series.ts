@@ -14,6 +14,7 @@ export class SeriesPage extends Component {
     this.template = this.createTemplate();
     this.children = [];
     this.series = [];
+    this.render();
     this.loadSeries();
   }
 
@@ -21,11 +22,17 @@ export class SeriesPage extends Component {
     const element = super.innRender(this.selector);
     const child = new Header('.header-slot');
     this.children.push(child);
+    this.renderSeries();
+    return element;
+  }
+
+  renderSeries() {
     const pendingSeries = this.series.filter((item) => item.score === 0);
     const child2 = new List(
       'section.list-slot',
       'series-pending',
-      pendingSeries
+      pendingSeries,
+      this.updateScore.bind(this)
     );
     this.children.push(child2);
     // Segunda lista para series vistas
@@ -36,13 +43,19 @@ export class SeriesPage extends Component {
       watchedSeries
     );
     this.children.push(child3);
-    return element;
   }
 
   loadSeries() {
     this.series = getSeries();
     consoleDebug(this.series);
-    this.render();
+    this.renderSeries();
+  }
+
+  updateScore(serie: Series, newScore: number) {
+    const id = this.series.findIndex((item) => item.id === serie.id);
+    this.series[id].score = newScore;
+    super.cleanHtml('section.list-slot');
+    this.renderSeries();
   }
 
   private createTemplate() {

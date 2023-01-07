@@ -1,5 +1,4 @@
 import { Component } from '../../../lib/component/component';
-import { consoleDebug } from '../../../lib/tools/debug';
 import { Series } from '../../models/series';
 import { SeriesCard } from '../serie.card/serie.card';
 import list__ from './list.module.css';
@@ -9,7 +8,8 @@ export class List extends Component {
   constructor(
     private selector: string,
     private filter: string = 'series-pending',
-    private series: Array<Series>
+    private series: Array<Series>,
+    private updateScore?: (serie: Series, score: number) => void
   ) {
     super();
     this.template = this.createTemplate();
@@ -20,7 +20,11 @@ export class List extends Component {
     const filter = this.filter;
     const element = super.innRender(this.selector);
     this.series.forEach((item) => {
-      const child = new SeriesCard(`ul.${filter}-cards-slot`, item);
+      const child = new SeriesCard(
+        `ul.${filter}-cards-slot`,
+        item,
+        this.updateScore
+      );
       this.children.push(child);
     });
     return element;
@@ -34,7 +38,7 @@ export class List extends Component {
     if (filter.includes('watched')) {
       title = 'Watched series';
       stateInfo =
-        this.filter.length === 5
+        this.series.length === 5
           ? `Congrats! You've watched all your series`
           : '';
     }

@@ -5,7 +5,11 @@ import card__ from './serie.card.module.css';
 
 export class SeriesCard extends Component {
   children: Array<Component>;
-  constructor(private selector: string, private serie: Series) {
+  constructor(
+    private selector: string,
+    private serie: Series,
+    private updateScore?: (serie: Series, score: number) => void
+  ) {
     super();
     this.template = this.createTemplate();
     this.children = [];
@@ -14,9 +18,18 @@ export class SeriesCard extends Component {
   render() {
     const element = super.innRender(this.selector);
     const scoreSelector = `.score-slot-${this.serie.id}`;
-    const child = new ScoreStars(scoreSelector, this.serie.score);
+    const child = new ScoreStars(
+      scoreSelector,
+      this.serie.score,
+      this.handleScore.bind(this)
+    );
     this.children.push(child);
     return element;
+  }
+
+  handleScore(newScore: number) {
+    if (this.updateScore === undefined) return;
+    this.updateScore(this.serie, newScore);
   }
 
   private createTemplate() {
@@ -28,7 +41,7 @@ export class SeriesCard extends Component {
             alt="${this.serie.name}" />
           <h4 class="${card__.serieTitle}">${this.serie.name}</h4>
           <p class="${card__.serieInfo}">${this.serie.creator} (${this.serie.year})</p>
-          <ul class="${card__.score} ${scoreSlot}"></ul>
+          <div class="${scoreSlot}"></div>
           <i class="fas fa-times-circle ${card__['icon--delete']}"></i>
         </li>
         `;
