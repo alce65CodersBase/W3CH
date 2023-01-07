@@ -47,6 +47,11 @@ img {
   padding: 20px 0;
 }
 
+.series .section-title {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .series-list--watched .icon--score {
   cursor: pointer;
 }
@@ -57,10 +62,8 @@ img {
 .ranking-item {
   width: 30%;
 }
-.series .section-title {
-  display: inline-block;
-  vertical-align: middle;
-}
+
+/* No se usan  */
 .icon--add {
   font-size: 30px;
   vertical-align: middle;

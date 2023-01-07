@@ -29,9 +29,10 @@ export const MOCK_SERIES: Array<Series> = [
     creator: 'Matthew Weiner',
     year: 2007,
     poster:
-      'https://pics.filmaffinity.com/Mad_Men_Serie_de_TV-351490728-large.jpg',
+      'https://m.media-amazon.com/images/M/MV5BNTgxNDZlODQtNDcwOC00NWQ5LTljNWMtMDhjY2U5YTUzMTc4XkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_.jpg',
+    //'https://pics.filmaffinity.com/Mad_Men_Serie_de_TV-351490728-large.jpg',
     watched: true,
-    score: 5,
+    score: 4,
     emmies: 116,
   },
   {
