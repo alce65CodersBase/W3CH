@@ -4,10 +4,8 @@ import { ScoreStars } from './score.stars';
 
 describe('Given "ScoreStars" component', () => {
   document.body.innerHTML = `<slot></slot>`;
-  const score = new ScoreStars('slot');
-  const elements = [
-    screen.getByRole('presentation', { name: 'Stars', hidden: true }),
-  ];
+  const score = new ScoreStars('slot', 3);
+  const elements = [screen.getByRole('listitem', { name: 'Star1' })];
   test('Then we should to be able to instantiate it', () => {
     expect(score).toBeInstanceOf(ScoreStars);
   });

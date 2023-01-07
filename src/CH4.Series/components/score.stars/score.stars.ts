@@ -1,8 +1,10 @@
 import { Component } from '../../../lib/component/component';
 import score__ from './score.stars.module.css';
 
+const STARS = [1, 2, 3, 4, 5];
+
 export class ScoreStars extends Component {
-  constructor(private selector: string) {
+  constructor(private selector: string, private score: number) {
     super();
     this.template = this.createTemplate();
     this.render();
@@ -13,23 +15,15 @@ export class ScoreStars extends Component {
   }
 
   private createTemplate() {
-    return `
-        <div class="${score__.container}" role="presentation" aria-label="Stars"></div>
-        <li class="score__star">
-          <i class="icon--score fas fa-star" title="1/5"></i>
+    const stars = STARS.map((item) => {
+      const iconType = item <= this.score ? 'fas' : 'far';
+      const label = `Star${item}`;
+      return `
+        <li class="score__star" aria-label="${label}">
+          <i class="icon--score ${iconType} fa-star" title="${item}/5"></i>
         </li>
-        <li class="score__star">
-          <i class="icon--score fas fa-star" title="2/5"></i>
-        </li>
-        <li class="score__star">
-          <i class="icon--score fas fa-star" title="3/5"></i>
-        </li>
-        <li class="score__star">
-          <i class="icon--score fas fa-star" title="4/5"></i>
-        </li>
-        <li class="score__star">
-          <i class="icon--score fas fa-star" title="5/5"></i>
-        </li>
-        `;
+      `;
+    });
+    return stars.join(' ');
   }
 }

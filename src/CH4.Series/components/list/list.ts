@@ -1,4 +1,6 @@
 import { Component } from '../../../lib/component/component';
+import { consoleDebug } from '../../../lib/tools/debug';
+import { Series } from '../../models/series';
 import { SeriesCard } from '../serie.card/serie.card';
 import list__ from './list.module.css';
 
@@ -6,7 +8,8 @@ export class List extends Component {
   children: Array<Component>;
   constructor(
     private selector: string,
-    public filter: string = 'series-pending'
+    private filter: string = 'series-pending',
+    private series: Array<Series>
   ) {
     super();
     this.template = this.createTemplate();
@@ -16,22 +19,30 @@ export class List extends Component {
   render() {
     const filter = this.filter;
     const element = super.innRender(this.selector);
-    const child = new SeriesCard(`ul.${filter}-cards-slot`);
-    this.children.push(child);
+    this.series.forEach((item) => {
+      const child = new SeriesCard(`ul.${filter}-cards-slot`, item);
+      this.children.push(child);
+    });
     return element;
   }
 
   private createTemplate() {
     const filter = this.filter;
     const slot = this.filter + '-cards-slot';
-    const title = filter.includes('pending')
-      ? 'Pending series'
-      : 'Watched series';
+    let title = 'Pending series';
+    let stateInfo = `You have ${this.series.length} series pending to watch`;
+    if (filter.includes('watched')) {
+      title = 'Watched series';
+      stateInfo =
+        this.filter.length === 5
+          ? `Congrats! You've watched all your series`
+          : '';
+    }
+
     return `
         <section class="${filter} ${list__.container} lista" role="region" aria-label="${filter}">
           <h3 class="${list__.subsectionTitle}">${title}</h3>
-          <p class="${list__.info}">You have 4 series pending to watch</p>
-          <!--<p class="${list__.info}">Congrats! You've watched all your series</p>-->
+          <p class="${list__.info}">${stateInfo}</p>
           <ul class="${list__.seriesList} ${slot}">
           <!--A continuación se inyectan los componentes SeriesCard-->
           </ul>
