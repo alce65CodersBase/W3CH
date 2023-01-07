@@ -1,5 +1,6 @@
 import { Component } from '../../../lib/component/component';
 import { Series } from '../../models/series';
+import { getSeries } from '../../services/mock.repo';
 import { SeriesCard } from '../serie.card/serie.card';
 import list__ from './list.module.css';
 
@@ -40,7 +41,7 @@ export class List extends Component {
     if (filter.includes('watched')) {
       title = 'Watched series';
       stateInfo =
-        this.series.length === 5
+        this.series.length === getSeries().length
           ? `Congrats! You've watched all your series`
           : '';
     }

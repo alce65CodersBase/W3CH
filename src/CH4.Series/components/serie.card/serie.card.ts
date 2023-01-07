@@ -31,7 +31,6 @@ export class SeriesCard extends Component {
   }
 
   handleDelete() {
-    console.log('Delete', this.serie);
     this.deleteSerie(this.serie);
   }
 

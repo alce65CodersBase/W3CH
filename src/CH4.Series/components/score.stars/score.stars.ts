@@ -22,13 +22,11 @@ export class ScoreStars extends Component {
         item.addEventListener('click', this.handleClick.bind(this))
       );
     }
-
     return element;
   }
 
   handleClick(ev: Event) {
     const newScore = (ev.target as HTMLUListElement).dataset.id;
-    console.log('Click', newScore);
     this.handleScore(Number(newScore));
   }
 
@@ -37,7 +35,7 @@ export class ScoreStars extends Component {
       const iconType = item <= this.score ? 'fas' : 'far';
       const label = `Star${item}`;
       return `
-        <li class="score__star" aria-label="${label}">
+        <li class="score__star" role="button" aria-label="${label}">
           <i class="icon--score ${iconType} fa-star" title="${item}/5" data-id='${item}'></i>
         </li>
       `;
