@@ -38,9 +38,6 @@ describe('Given "List" component and a DOM implementation', () => {
       [MOCK_SERIES[0]],
       deleteSerie
     );
-    // const elements = [
-    //   ['<section>', screen.getByRole('region', { name: 'series-pending' })],
-    // ];
     test('Then we should to be able to instantiate it', () => {
       expect(getSeries).toHaveBeenCalled();
       expect(list).toBeInstanceOf(List);

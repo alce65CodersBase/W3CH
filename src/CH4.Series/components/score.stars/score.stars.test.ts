@@ -19,7 +19,6 @@ describe('Given "ScoreStars" component', () => {
   });
   describe('When we click its <li>', () => {
     test('Then the parameter handleScore should be called', () => {
-      //score.handleClick(new Event('click'));
       const button = elements[0][1] as HTMLElement;
       fireEvent.click(button);
       expect(handleScore).toHaveBeenCalled();

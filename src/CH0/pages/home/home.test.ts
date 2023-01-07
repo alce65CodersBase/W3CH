@@ -9,16 +9,13 @@ describe('Given "HomePage" component', () => {
   const elements = [
     screen.getByRole('heading', { name: 'Home' }), // <h2>
   ];
-  test('Then we should to be able to instantiate it', () => {
-    expect(homePage).toBeInstanceOf(HomePage);
+  describe('When it is call with a DOM implementation', () => {
+    test('Then we should to be able to instantiate it', () => {
+      expect(homePage).toBeInstanceOf(HomePage);
+    });
+    test.each(elements)(`Then H2 should be render`, (element) => {
+      expect(element).toBeInstanceOf(HTMLElement);
+      expect(element).toBeInTheDocument();
+    });
   });
-  describe.each(elements)(
-    'When it is call with a DOM implementation',
-    (element: HTMLElement) => {
-      test(`Then ${element.tagName} should be render`, () => {
-        expect(element).toBeInstanceOf(HTMLElement);
-        expect(element).toBeInTheDocument();
-      });
-    }
-  );
 });

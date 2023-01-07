@@ -1,5 +1,4 @@
 import { Component } from '../../../lib/component/component';
-import { Series } from '../../models/series';
 import score__ from './score.stars.module.css';
 
 const STARS = [1, 2, 3, 4, 5];
