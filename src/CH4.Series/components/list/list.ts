@@ -9,6 +9,7 @@ export class List extends Component {
     private selector: string,
     private filter: 'series-watched' | 'series-pending',
     private series: Array<Series>,
+    private deleteSerie: (serie: Series) => void,
     private updateScore?: (serie: Series, score: number) => void
   ) {
     super();
@@ -23,6 +24,7 @@ export class List extends Component {
       const child = new SeriesCard(
         `ul.${filter}-cards-slot`,
         item,
+        this.deleteSerie,
         this.updateScore
       );
       this.children.push(child);

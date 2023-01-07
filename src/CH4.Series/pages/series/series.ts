@@ -32,6 +32,7 @@ export class SeriesPage extends Component {
       'section.list-slot',
       'series-pending',
       pendingSeries,
+      this.deleteSerie.bind(this),
       this.updateScore.bind(this)
     );
     this.children.push(child2);
@@ -40,7 +41,8 @@ export class SeriesPage extends Component {
     const child3 = new List(
       'section.list-slot',
       'series-watched',
-      watchedSeries
+      watchedSeries,
+      this.deleteSerie.bind(this)
     );
     this.children.push(child3);
   }
@@ -54,6 +56,12 @@ export class SeriesPage extends Component {
   updateScore(serie: Series, newScore: number) {
     const id = this.series.findIndex((item) => item.id === serie.id);
     this.series[id].score = newScore;
+    super.cleanHtml('section.list-slot');
+    this.renderSeries();
+  }
+
+  deleteSerie(serie: Series) {
+    this.series = this.series.filter((item) => item.id !== serie.id);
     super.cleanHtml('section.list-slot');
     this.renderSeries();
   }

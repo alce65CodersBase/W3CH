@@ -8,6 +8,7 @@ export class SeriesCard extends Component {
   constructor(
     private selector: string,
     private serie: Series,
+    private deleteSerie: (serie: Series) => void,
     private updateScore?: (serie: Series, score: number) => void
   ) {
     super();
@@ -24,7 +25,14 @@ export class SeriesCard extends Component {
       this.handleScore.bind(this)
     );
     this.children.push(child);
+    const deleteIcon = element.querySelector('.fa-times-circle');
+    deleteIcon?.addEventListener('click', this.handleDelete.bind(this));
     return element;
+  }
+
+  handleDelete() {
+    console.log('Delete', this.serie);
+    this.deleteSerie(this.serie);
   }
 
   handleScore(newScore: number) {
