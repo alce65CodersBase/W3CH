@@ -1,5 +1,4 @@
 import { Component } from '../../../lib/component/component';
-import sample from './sample.module.css';
 
 export class Sample extends Component {
   constructor(private selector: string) {
@@ -13,7 +12,7 @@ export class Sample extends Component {
 
   private createTemplate() {
     return `
-        <div class="${sample.container}" role="generic">
+        <div class=".sample" role="generic">
             Sample
         </div>
         `;

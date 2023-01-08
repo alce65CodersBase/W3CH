@@ -1,3 +1,7 @@
+export const lastFromLocation = () => {
+  return '/' + location.pathname.split('/').at(-1);
+};
+
 export const detailUrlParse = () => {
   let pokeId = 0;
   let origin = '';
