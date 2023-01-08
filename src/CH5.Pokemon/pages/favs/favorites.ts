@@ -1,4 +1,5 @@
 import { Component } from '../../../lib/component/component';
+import { MyPokeList } from '../../components/pokemons/my.poke.list';
 import { StateStructure } from '../../services/state/state';
 
 export class FavoritesPage extends Component {
@@ -10,7 +11,7 @@ export class FavoritesPage extends Component {
 
   render() {
     const element = super.innRender(this.selector);
-    // new MyPokeList('.my-poke-list', this.state);
+    new MyPokeList('.my-poke-list', this.state);
     return element;
   }
 
