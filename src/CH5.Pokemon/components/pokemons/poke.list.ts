@@ -19,6 +19,7 @@ export class PokeList extends Component {
   }
 
   render() {
+    this.element = document.querySelector(this.selector) as HTMLElement;
     this.#pokeData.forEach(
       (poke: Pokemon) => new PokeItem(this.selector, poke)
     );

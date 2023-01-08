@@ -1,31 +1,12 @@
 import { PokeList } from './poke.list';
 import { screen } from '@testing-library/dom';
+import { MOCK_STATE } from '../../__mocks__/state';
 
 describe('Given the component PokeList', () => {
   describe('When it will be instantiated ', () => {
-    let state;
-    let renderedComponent;
+    const state = MOCK_STATE;
+    let renderedComponent: PokeList;
     beforeEach(() => {
-      state = {
-        pokeData: [
-          {
-            name: 'Snorlax',
-            age: 22,
-            data: {
-              sample: '',
-            },
-          },
-        ],
-        favorites: [
-          {
-            name: 'Snorlax',
-            age: 22,
-            data: {
-              sample: '',
-            },
-          },
-        ],
-      };
       document.body.innerHTML = "<div class='poke-list'></div>";
       renderedComponent = new PokeList('.poke-list', state.pokeData, state);
     });

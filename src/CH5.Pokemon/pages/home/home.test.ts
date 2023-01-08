@@ -1,13 +1,12 @@
 import { screen } from '@testing-library/dom';
 // adds special assertions like toHaveTextContent
 import '@testing-library/jest-dom';
-import { MockState } from '../../services/state/state';
+import { MOCK_STATE } from '../../__mocks__/state';
 import { HomePage } from './home';
 
 describe('Given "HomePage" component', () => {
   document.body.innerHTML = `<main></main>`;
-  const state = new MockState();
-  const pokeHomePage = new HomePage('main', state);
+  const pokeHomePage = new HomePage('main', MOCK_STATE);
   const pokeElements = [
     screen.getByRole('region', { name: 'Home' }), // <h2>
   ];
@@ -15,7 +14,7 @@ describe('Given "HomePage" component', () => {
     test('Then we should to be able to instantiate it', () => {
       expect(pokeHomePage).toBeInstanceOf(HomePage);
     });
-    test.each(pokeElements)(`Then H2 should be render`, (element) => {
+    test.each(pokeElements)(`Then <section> should be render`, (element) => {
       expect(element).toBeInstanceOf(HTMLElement);
       expect(element).toBeInTheDocument();
     });

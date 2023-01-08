@@ -1,4 +1,21 @@
-import { Ability, Pokemon, Sprites } from './pokemon';
+import { Ability, Pokemon, Sprites } from '../models/pokemon';
+
+const MOCK_SPRITES: Sprites = {
+  back_default:
+    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/28.png',
+  back_female: null,
+  back_shiny:
+    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/28.png',
+  back_shiny_female: null,
+  front_default:
+    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/28.png',
+  front_female: null,
+  front_shiny:
+    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/28.png',
+  front_shiny_female: null,
+  other: null,
+  versions: null,
+};
 
 export const MOCK_POKE: Pokemon = {
   name: '',
@@ -16,7 +33,7 @@ export const MOCK_POKE: Pokemon = {
   order: 0,
   past_types: [],
   species: <Ability>{},
-  sprites: <Sprites>{},
+  sprites: MOCK_SPRITES,
   stats: [],
   types: [],
   weight: 0,

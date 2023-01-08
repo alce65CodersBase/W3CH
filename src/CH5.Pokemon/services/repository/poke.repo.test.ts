@@ -1,4 +1,4 @@
-import { MOCK_POKE } from '../../models/mock';
+import { MOCK_POKE } from '../../__mocks__/mock';
 import { createPokeRepo } from './poke.repo';
 
 describe('Given the api-services', () => {

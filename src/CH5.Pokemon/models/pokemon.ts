@@ -45,8 +45,8 @@ export interface Sprites {
   front_female?: any;
   front_shiny: string;
   front_shiny_female?: any;
-  other: Other;
-  versions: Versions;
+  other: Other | null;
+  versions: Versions | null;
 }
 
 interface Versions {
