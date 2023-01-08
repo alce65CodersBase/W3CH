@@ -10,6 +10,7 @@ export class DetailsPage extends Component {
 
   render() {
     const element = super.innRender(this.selector);
+    // new PokeDetail('.poke-detail', this.state);
     return element;
   }
 

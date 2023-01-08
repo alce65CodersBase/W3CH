@@ -37,17 +37,13 @@ export class App {
     switch (pathname) {
       case '/':
       case '/index.html':
-        new HomePage('main');
-        // new HomePokeList('.home-poke-list', this.state);
-        // new Pagination('.pagination', this.state);
+        new HomePage('main', this.state);
         break;
       case '/my-pokemons.html':
-        new FavoritesPage('main');
-        // new MyPokeList('.my-poke-list', this.state);
+        new FavoritesPage('main', this.state);
         break;
       default:
-        new DetailsPage('main');
-        // new PokeDetail('.poke-detail', this.state);
+        new DetailsPage('main', this.state);
         break;
     }
   }

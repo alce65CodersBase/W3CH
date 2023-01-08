@@ -10,6 +10,7 @@ export class FavoritesPage extends Component {
 
   render() {
     const element = super.innRender(this.selector);
+    // new MyPokeList('.my-poke-list', this.state);
     return element;
   }
 

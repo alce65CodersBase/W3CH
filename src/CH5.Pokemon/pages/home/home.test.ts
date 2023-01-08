@@ -9,7 +9,7 @@ describe('Given "HomePage" component', () => {
   const state = new MockState();
   const pokeHomePage = new HomePage('main', state);
   const pokeElements = [
-    screen.getByRole('heading', { name: 'Home' }), // <h2>
+    screen.getByRole('region', { name: 'Home' }), // <h2>
   ];
   describe('When it is call with a DOM implementation', () => {
     test('Then we should to be able to instantiate it', () => {

@@ -11,15 +11,14 @@ export class HomePage extends Component {
 
   render() {
     const element = super.innRender(this.selector);
-    // new HomePokeList('.home-poke-list', this.state);
+    new HomePokeList('.home-poke-list', this.state);
     // new Pagination('.pagination', this.state);
     return element;
   }
 
   private createTemplate() {
     return `
-      <section class="home-poke-list">
-        <h2 aria-label="Home">Pokemon List</h2>
+      <section class="home-poke-list" aria-label="Home">
       </section>
     `;
   }
