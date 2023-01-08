@@ -1,11 +1,13 @@
 import { screen } from '@testing-library/dom';
 // adds special assertions like toHaveTextContent
 import '@testing-library/jest-dom';
+import { MockState } from '../../services/state/state';
 import { FavoritesPage } from './favorites';
 
 describe('Given "FavoritesPage" component', () => {
   document.body.innerHTML = `<main></main>`;
-  const pokeFavoritesPage = new FavoritesPage('main');
+  const state = new MockState();
+  const pokeFavoritesPage = new FavoritesPage('main', state);
   const pokeElements = [
     screen.getByRole('heading', { name: 'Favorites' }), // <h2>
   ];

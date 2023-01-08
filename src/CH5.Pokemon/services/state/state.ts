@@ -10,6 +10,21 @@ export type StateStructure = {
   favorites: Array<Pokemon>;
 };
 
+export class MockState implements StateStructure {
+  count: number;
+  nextUrl: string | null;
+  previousUrl: string | null;
+  pokeData: Array<Pokemon>;
+  favorites: Array<Pokemon>;
+  constructor() {
+    this.count = 0;
+    this.nextUrl = '';
+    this.previousUrl = '';
+    this.pokeData = [];
+    this.favorites = [];
+  }
+}
+
 export class State implements StateStructure {
   count: number;
   nextUrl: string | null;

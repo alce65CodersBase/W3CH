@@ -1,7 +1,8 @@
 import { Component } from '../../../lib/component/component';
+import { StateStructure } from '../../services/state/state';
 
 export class DetailsPage extends Component {
-  constructor(private selector: string) {
+  constructor(private selector: string, private state: StateStructure) {
     super();
     this.template = this.createTemplate();
     this.render();

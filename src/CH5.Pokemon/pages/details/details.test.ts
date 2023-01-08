@@ -1,11 +1,13 @@
 import { screen } from '@testing-library/dom';
 // adds special assertions like toHaveTextContent
 import '@testing-library/jest-dom';
+import { MockState } from '../../services/state/state';
 import { DetailsPage } from './details';
 
 describe('Given "DetailsPage" component', () => {
   document.body.innerHTML = `<main></main>`;
-  const pokeDetailsPage = new DetailsPage('main');
+  const state = new MockState();
+  const pokeDetailsPage = new DetailsPage('main', state);
   const pokeElements = [
     screen.getByRole('heading', { name: 'Details' }), // <h2>
   ];
