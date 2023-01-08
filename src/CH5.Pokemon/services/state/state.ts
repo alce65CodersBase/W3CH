@@ -102,13 +102,13 @@ export class State implements StateStructure {
     return this;
   }
 
-  getDetail(origin: string, pokeId: string) {
-    let pokeData = null;
+  getDetail(origin: string, pokeId: number) {
+    let pokeData;
     if (origin === '.my-poke-list__list') {
       pokeData = this.favorites.find((poke) => poke.id === +pokeId);
     } else {
       pokeData = this.pokeData.find((poke) => poke.id === +pokeId);
     }
-    return pokeData;
+    return pokeData as Pokemon;
   }
 }
