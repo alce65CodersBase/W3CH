@@ -21,7 +21,9 @@ export class PokeDetail extends Component {
 
   render() {
     const element = super.innRender(this.selector);
-    new FavoriteIcon('.poke-item__fav', this.state, this.pokeId);
+    this.children.push(
+      new FavoriteIcon('.poke-item__fav', this.state, this.pokeId)
+    );
     return element;
   }
 

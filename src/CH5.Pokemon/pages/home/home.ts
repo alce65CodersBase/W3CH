@@ -12,8 +12,8 @@ export class HomePage extends Component {
 
   render() {
     const element = super.innRender(this.selector);
-    new HomePokeList('.home-poke-list', this.state);
-    new Pagination('.pagination', this.state);
+    this.children.push(new HomePokeList('.home-poke-list', this.state));
+    this.children.push(new Pagination('.pagination', this.state));
     return element;
   }
 

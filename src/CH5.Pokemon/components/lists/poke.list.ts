@@ -18,7 +18,9 @@ export class PokeList extends Component {
   render() {
     this.element = document.querySelector(this.selector) as HTMLElement;
     super.cleanHtml(this.selector);
-    this.pokeData.forEach((poke: Pokemon) => new PokeItem(this.selector, poke));
+    this.pokeData.forEach((poke: Pokemon) =>
+      this.children.push(new PokeItem(this.selector, poke))
+    );
   }
 
   private manageComponent() {
@@ -27,7 +29,13 @@ export class PokeList extends Component {
       ...componentElement.querySelectorAll('.poke-item__fav'),
     ] as Array<HTMLElement>;
     icons.forEach((icon) => {
-      new FavoriteIcon('#' + icon.id, this.state, +(icon.dataset.id as string));
+      this.children.push(
+        new FavoriteIcon(
+          '#' + icon.id,
+          this.state,
+          +(icon.dataset.id as string)
+        )
+      );
     });
   }
 }

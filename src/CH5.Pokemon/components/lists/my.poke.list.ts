@@ -7,7 +7,9 @@ export class MyPokeList extends Component {
     super();
     this.template = this.createTemplate();
     this.render();
-    new PokeList('.my-poke-list__list', this.state.favorites, state);
+    this.children.push(
+      new PokeList('.my-poke-list__list', this.state.favorites, state)
+    );
   }
 
   render() {

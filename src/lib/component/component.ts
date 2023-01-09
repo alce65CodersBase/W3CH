@@ -1,6 +1,11 @@
 export abstract class Component {
   protected template!: string;
   protected element!: Element | null;
+  protected children: Array<Component>;
+
+  constructor() {
+    this.children = [];
+  }
 
   render() {
     // Se sobrescribe en las clases hijas

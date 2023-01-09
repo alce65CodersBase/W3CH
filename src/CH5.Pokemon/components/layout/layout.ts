@@ -13,12 +13,12 @@ export class Layout extends Component {
   }
   render() {
     const element = super.innRender(this.selector);
-    new Header(this.selector);
+    this.children.push(new Header(this.selector));
     // inside <header>
-    new Menu('header', this.menuItems);
+    this.children.push(new Menu('header', this.menuItems));
     // end inside <header>
-    new Main(this.selector);
-    new Footer(this.selector);
+    this.children.push(new Main(this.selector));
+    this.children.push(new Footer(this.selector));
     return element;
   }
 

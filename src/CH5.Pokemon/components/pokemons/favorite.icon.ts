@@ -43,9 +43,11 @@ export class FavoriteIcon extends Component {
     element.classList.toggle('far');
     element.classList.toggle('fas');
     const newState = await this.state.changeFavorites(this.pokeId);
+    let favoritesList: Component | null = null;
     if (document.querySelector('.my-poke-list')) {
-      new MyPokeList('.my-poke-list', newState as State);
+      favoritesList = new MyPokeList('.my-poke-list', newState as State);
     }
-    consoleDebug('Favorite state changed');
+    const target = favoritesList ? 'In Favorites page' : 'In Other page';
+    consoleDebug('Favorite state changed' + target);
   }
 }
