@@ -57,8 +57,9 @@ li {
 .poke-list__list,
 .my-poke-list__list {
   display: grid;
-  grid-template-columns: auto;
   gap: 1rem;
+  grid-auto-rows: 8rem;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   list-style: none;
 }
 .poke-item {
@@ -66,6 +67,7 @@ li {
   padding-left: 0.2rem;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 .poke-item__link {
   font-size: 1.2rem;
@@ -104,6 +106,9 @@ li {
 }
 
 .poke-item__fav {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
   padding-top: 0.2rem;
   padding-right: 0.2rem;
   cursor: pointer;
@@ -149,19 +154,5 @@ li {
 @media (min-width: 470px) {
   .header__main {
     flex-direction: row;
-  }
-}
-
-@media (min-width: 550px) {
-  .poke-list__list,
-  .my-poke-list__list {
-    grid-template-columns: auto auto;
-  }
-}
-
-@media (min-width: 850px) {
-  .poke-list__list,
-  .my-poke-list__list {
-    grid-template-columns: auto auto auto;
   }
 }
