@@ -7,7 +7,8 @@ describe('Given the component MyPokeList', () => {
     let renderedComponent: MyPokeList;
     let state;
     beforeEach(() => {
-      (state = MOCK_FULL_STATE), (state.favorites = []);
+      state = MOCK_FULL_STATE;
+      state.favorites = [];
       document.body.innerHTML = "<div class='my-poke-list'></div>";
       renderedComponent = new MyPokeList('.my-poke-list', state);
     });

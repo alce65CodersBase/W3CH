@@ -44,8 +44,10 @@ li {
   display: flex;
 }
 
-.poke-menu__item {
-}
+/* items del menu
+  .poke-menu__item {}
+*/
+
 .poke-menu__link {
   display: block;
   padding: 1rem;

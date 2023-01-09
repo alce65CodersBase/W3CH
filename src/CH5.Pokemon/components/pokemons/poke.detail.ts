@@ -1,9 +1,8 @@
 import { Component } from '../../../lib/component/component';
 import { Pokemon } from '../../models/pokemon';
 import { detailUrlParse } from '../../services/helpers/helpers';
-import { State } from '../../services/state/state.js';
+import { State } from '../../services/state/state';
 import { FavoriteIcon } from './favorite.icon';
-// import { FavoriteIcon } from './favorite-icon.js';
 
 export class PokeDetail extends Component {
   private pokeId: number;

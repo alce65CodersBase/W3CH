@@ -4,8 +4,6 @@ export interface ProtoPokemon {
 }
 
 export interface Pokemon extends ProtoPokemon {
-  //name: string;
-  //url: string;
   id: number;
   abilities: Ability2[];
   base_experience: number;

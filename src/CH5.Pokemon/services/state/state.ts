@@ -78,7 +78,6 @@ export class State implements StateStructure, StateMethods {
         const fullPoke = fullPokes.find((poke: Pokemon) => {
           return poke.name === item.name;
         }) as Pokemon;
-        // if (!fullPoke) throw new Error('');
         const result: Pokemon = { ...fullPoke, ...item, id: +id };
         return result;
       })

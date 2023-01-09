@@ -1,7 +1,7 @@
 import { State } from './state';
 import * as service from '../repository/poke.repo';
 import { URL_POKE_API } from '../config';
-import { MOCK_POKE, MOCK_POKE_FULL } from '../../__mocks__/mock';
+import { MOCK_POKE } from '../../__mocks__/mock';
 import { Pokemon, ProtoPokemon } from '../../models/pokemon';
 import { PokeResponse } from '../repository/types';
 
