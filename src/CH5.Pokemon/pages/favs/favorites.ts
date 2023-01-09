@@ -1,9 +1,9 @@
 import { Component } from '../../../lib/component/component';
 import { MyPokeList } from '../../components/pokemons/my.poke.list';
-import { StateStructure } from '../../services/state/state';
+import { State } from '../../services/state/state';
 
 export class FavoritesPage extends Component {
-  constructor(private selector: string, private state: StateStructure) {
+  constructor(private selector: string, private state: State) {
     super();
     this.template = this.createTemplate();
     this.render();

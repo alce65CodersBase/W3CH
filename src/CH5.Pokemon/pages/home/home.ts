@@ -1,9 +1,9 @@
 import { Component } from '../../../lib/component/component';
 import { HomePokeList } from '../../components/pokemons/home.poke.list';
-import { StateStructure } from '../../services/state/state';
+import { State } from '../../services/state/state';
 
 export class HomePage extends Component {
-  constructor(private selector: string, private state: StateStructure) {
+  constructor(private selector: string, private state: State) {
     super();
     this.template = this.createTemplate();
     this.render();
