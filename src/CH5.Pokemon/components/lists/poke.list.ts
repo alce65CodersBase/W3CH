@@ -1,8 +1,8 @@
 import { Component } from '../../../lib/component/component';
 import { Pokemon } from '../../models/pokemon';
 import { State } from '../../services/state/state';
-import { FavoriteIcon } from './favorite.icon';
-import { PokeItem } from './poke.item';
+import { FavoriteIcon } from '../pokemons/favorite.icon';
+import { PokeItem } from '../pokemons/poke.item';
 
 export class PokeList extends Component {
   constructor(
@@ -17,6 +17,7 @@ export class PokeList extends Component {
 
   render() {
     this.element = document.querySelector(this.selector) as HTMLElement;
+    super.cleanHtml(this.selector);
     this.pokeData.forEach((poke: Pokemon) => new PokeItem(this.selector, poke));
   }
 

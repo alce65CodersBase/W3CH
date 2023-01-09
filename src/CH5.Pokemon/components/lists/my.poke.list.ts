@@ -1,15 +1,13 @@
 import { Component } from '../../../lib/component/component';
-import { StateStructure } from '../../services/state/state';
+import { State } from '../../services/state/state';
 import { PokeList } from './poke.list';
 
 export class MyPokeList extends Component {
-  #state;
-  constructor(private selector: string, state: StateStructure) {
+  constructor(private selector: string, private state: State) {
     super();
-    this.#state = state;
-    this.template = this.#createTemplate();
+    this.template = this.createTemplate();
     this.render();
-    new PokeList('.my-poke-list__list', this.#state.favorites, state);
+    new PokeList('.my-poke-list__list', this.state.favorites, state);
   }
 
   render() {
@@ -17,7 +15,7 @@ export class MyPokeList extends Component {
     return element;
   }
 
-  #createTemplate() {
+  private createTemplate() {
     const template = `
       <h2>Pokemons favoritos</h2>
       <div class="my-poke-list">

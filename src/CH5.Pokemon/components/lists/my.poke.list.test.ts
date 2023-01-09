@@ -1,13 +1,13 @@
 import { MyPokeList } from './my.poke.list';
 import { screen } from '@testing-library/dom';
-import { MOCK_STATE } from '../../__mocks__/state';
+import { MOCK_FULL_STATE } from '../../__mocks__/state';
 
 describe('Given the component MyPokeList', () => {
   describe('When it will be instantiated ', () => {
     let renderedComponent: MyPokeList;
     let state;
     beforeEach(() => {
-      state = { ...MOCK_STATE, favorites: [] };
+      (state = MOCK_FULL_STATE), (state.favorites = []);
       document.body.innerHTML = "<div class='my-poke-list'></div>";
       renderedComponent = new MyPokeList('.my-poke-list', state);
     });
