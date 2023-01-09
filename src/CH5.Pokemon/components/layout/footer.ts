@@ -12,7 +12,7 @@ export class Footer extends Component {
   }
 
   render() {
-    super.innRender(this.selector, 'end');
+    return super.innRender(this.selector, 'end');
   }
 
   #createTemplate(author: string, brand: string) {

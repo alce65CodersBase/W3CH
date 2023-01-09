@@ -8,7 +8,7 @@ export class Menu extends Component {
     this.render();
   }
   render() {
-    super.innRender(this.selector);
+    return super.innRender(this.selector);
   }
   #createTemplate() {
     let template = '';
