@@ -15,7 +15,7 @@ export class App {
       { path: 'my-pokemons.html', label: 'Favorites' },
     ];
     this.state = new State();
-    console.log('App loaded', location.pathname);
+    consoleDebug('App loaded: ' + location.pathname);
 
     try {
       new Layout('.root', this.menuItems);
