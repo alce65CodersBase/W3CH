@@ -4,7 +4,6 @@ import { ScoreStars } from '../score.stars/score.stars';
 import card__ from './serie.card.module.css';
 
 export class SeriesCard extends Component {
-  children: Array<Component>;
   constructor(
     private selector: string,
     private serie: Series,
@@ -13,7 +12,6 @@ export class SeriesCard extends Component {
   ) {
     super();
     this.template = this.createTemplate();
-    this.children = [];
     this.render();
   }
   render() {

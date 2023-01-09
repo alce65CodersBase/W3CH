@@ -12,6 +12,7 @@ export function createPokeRepo() {
   };
 
   const queryPoke = async (url: string): Promise<Pokemon> => {
+    // Overload de la función fetchPoke
     return fetchPoke(url) as unknown as Promise<Pokemon>;
   };
 
