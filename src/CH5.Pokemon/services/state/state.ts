@@ -86,10 +86,10 @@ export class State implements StateStructure, StateMethods {
 
     /* Código alternativo
     return initialPokeList.results.reduce(async (prev, item) => {
-         const id = item.url.split('/').at(-2);
-        const pokeData = await fetchPoke(item.url);
-        await prev;
-        return [...prev, { ...item, id: id, sprites: pokeData.sprites }];
+      const id = item.url.split('/').at(-2);
+      const pokeData = await fetchPoke(item.url);
+      await prev;
+      return [...prev, { ...item, id: id, sprites: pokeData.sprites }];
     }, []); */
   }
 
