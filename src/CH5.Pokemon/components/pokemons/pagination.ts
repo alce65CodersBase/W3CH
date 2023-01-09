@@ -10,6 +10,7 @@ export class Pagination extends Component {
   }
 
   render() {
+    super.cleanHtml(this.selector);
     return super.innRender(this.selector);
   }
 
