@@ -82,19 +82,19 @@ describe('Given the class State', () => {
     describe('And method changeFavorites is implemented', () => {
       test('Then it should be used for add favorites', async () => {
         expect(state).toHaveProperty('changeFavorites');
-        await state.changeFavorites('2');
+        await state.changeFavorites(2);
         expect(service.createPokeRepo).toHaveBeenCalled();
         expect(addPoke).toHaveBeenCalled();
       });
       test('Then it should be used for remove favorites', async () => {
         expect(state).toHaveProperty('changeFavorites');
-        await state.changeFavorites('1');
+        await state.changeFavorites(1);
         expect(service.createPokeRepo).toHaveBeenCalled();
         expect(removePoke).toHaveBeenCalled();
       });
       test('Then it should be tried to add to favorites and inexistent pokemon', async () => {
         expect(state).toHaveProperty('changeFavorites');
-        await state.changeFavorites('3');
+        await state.changeFavorites(3);
         expect(service.createPokeRepo).toHaveBeenCalled();
       });
     });
@@ -102,7 +102,7 @@ describe('Given the class State', () => {
     describe('And method getDetail is implemented', () => {
       test('Then it should be used for favorites', () => {
         const origin = '.my-poke-list__list';
-        const pokeId = '1';
+        const pokeId = 1;
         expect(state).toHaveProperty('getDetail');
         state.favorites = [MOCK_POKE];
         expect(state.getDetail(origin, pokeId)).toHaveProperty(
@@ -112,7 +112,7 @@ describe('Given the class State', () => {
       });
       test('Then it should be used for home page', () => {
         const origin = '.poke-list__list';
-        const pokeId = '1';
+        const pokeId = 1;
         expect(state).toHaveProperty('getDetail');
         state.pokeData = [MOCK_POKE];
         expect(state.getDetail(origin, pokeId)).toHaveProperty(

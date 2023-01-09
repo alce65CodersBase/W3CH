@@ -19,7 +19,7 @@ MOCK_STATE.favorites = [
   },
 ];
 
-export const MOCK_FULL_STATE = new State();
+export const MOCK_FULL_STATE = new MockState() as State;
 MOCK_FULL_STATE.pokeData = MOCK_STATE.pokeData;
 MOCK_FULL_STATE.favorites = MOCK_STATE.favorites;
 MOCK_FULL_STATE.hydrateData = jest.fn().mockResolvedValue({});

@@ -1,4 +1,4 @@
-import { detailUrlParse } from './helpers';
+import { detailUrlParse, lastFromLocation } from './helpers';
 
 describe('Given the helpers', () => {
   describe('When detailUrlParse will be executed ', () => {
@@ -10,6 +10,16 @@ describe('Given the helpers', () => {
       window.location = url as unknown as string & Location;
       expect(detailUrlParse()).toHaveProperty('origin', '.poke-list__list');
       expect(detailUrlParse()).toHaveProperty('pokeId', 2);
+    });
+  });
+
+  describe('When lastFromLocation will be executed', () => {
+    test('An string should be returned', () => {
+      const url = new URL('http://127.0.0.1:8080/pokemon/favorites');
+      delete (window as any).location;
+      window.location = url as unknown as string & Location;
+      const result = lastFromLocation();
+      expect(result).toBe('/favorites');
     });
   });
 });
