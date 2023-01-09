@@ -2,6 +2,7 @@ import { Component } from '../../../lib/component/component';
 import { Pokemon } from '../../models/pokemon';
 import { detailUrlParse } from '../../services/helpers/helpers';
 import { State } from '../../services/state/state.js';
+import { FavoriteIcon } from './favorite.icon';
 // import { FavoriteIcon } from './favorite-icon.js';
 
 export class PokeDetail extends Component {
@@ -20,7 +21,7 @@ export class PokeDetail extends Component {
 
   render() {
     const element = super.innRender(this.selector);
-    // new FavoriteIcon('.poke-item__fav', state, this.pokeId);
+    new FavoriteIcon('.poke-item__fav', this.state, this.pokeId);
     return element;
   }
 

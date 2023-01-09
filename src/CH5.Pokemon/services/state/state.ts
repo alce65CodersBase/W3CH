@@ -10,6 +10,14 @@ export type StateStructure = {
   favorites: Array<Pokemon>;
 };
 
+interface StateMethods {
+  updateState: () => Promise<void>;
+  hydrateData: () => Promise<void>;
+  hydrateFavorites: () => Promise<void>;
+  changeFavorites: (id: number) => Promise<State | null>;
+  getDetail: (origin: string, pokeId: number) => Pokemon;
+}
+
 export class MockState implements StateStructure {
   count: number;
   nextUrl: string | null;
@@ -25,7 +33,7 @@ export class MockState implements StateStructure {
   }
 }
 
-export class State implements StateStructure {
+export class State implements StateStructure, StateMethods {
   count: number;
   nextUrl: string | null;
   previousUrl: string | null;
@@ -89,13 +97,13 @@ export class State implements StateStructure {
     this.favorites = await createPokeRepo().fetchPoke<Pokemon>(URL_FAVORITES);
   }
 
-  async changeFavorites(id: string) {
+  async changeFavorites(id: number) {
     if (this.favorites.find((item) => +item.id === +id)) {
-      const resp = await createPokeRepo().removePoke(URL_FAVORITES + id);
+      await createPokeRepo().removePoke(URL_FAVORITES + id);
       this.favorites = this.favorites.filter((item) => +item.id !== +id);
     } else {
       const newFavorite = this.pokeData.find((item) => +item.id === +id);
-      if (!newFavorite) return;
+      if (!newFavorite) return null;
       const resp = await createPokeRepo().addPoke(URL_FAVORITES, newFavorite);
       this.favorites = [...this.favorites, resp];
     }

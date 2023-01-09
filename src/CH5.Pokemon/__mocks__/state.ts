@@ -1,4 +1,4 @@
-import { MockState } from '../services/state/state';
+import { MockState, State } from '../services/state/state';
 import { MOCK_POKE } from './mock';
 
 export const MOCK_STATE = new MockState();
@@ -18,3 +18,12 @@ MOCK_STATE.favorites = [
     height: 25,
   },
 ];
+
+export const MOCK_FULL_STATE = new State();
+MOCK_FULL_STATE.pokeData = MOCK_STATE.pokeData;
+MOCK_FULL_STATE.favorites = MOCK_STATE.favorites;
+MOCK_FULL_STATE.hydrateData = jest.fn().mockResolvedValue({});
+MOCK_FULL_STATE.hydrateFavorites = jest.fn();
+MOCK_FULL_STATE.changeFavorites = jest.fn();
+MOCK_FULL_STATE.updateState = jest.fn();
+MOCK_FULL_STATE.getDetail = jest.fn();
