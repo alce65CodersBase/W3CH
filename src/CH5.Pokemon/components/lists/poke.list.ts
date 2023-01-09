@@ -21,7 +21,7 @@ export class PokeList extends Component {
     this.pokeData.forEach((poke: Pokemon) =>
       this.children.push(new PokeItem(this.selector, poke))
     );
-    return;
+    return this.element;
   }
 
   private manageComponent() {
