@@ -5,7 +5,6 @@ import { SeriesCard } from '../serie.card/serie.card';
 import list__ from './list.module.css';
 
 export class List extends Component {
-  children: Array<Component>;
   constructor(
     private selector: string,
     private filter: 'series-watched' | 'series-pending',
@@ -15,7 +14,6 @@ export class List extends Component {
   ) {
     super();
     this.template = this.createTemplate();
-    this.children = [];
     this.render();
   }
   render() {

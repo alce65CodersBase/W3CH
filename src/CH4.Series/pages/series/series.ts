@@ -7,12 +7,10 @@ import { getSeries } from '../../services/mock.repo';
 import series__ from './series.module.css';
 
 export class SeriesPage extends Component {
-  children: Array<Component>;
   series: Array<Series>;
   constructor(private selector: string) {
     super();
     this.template = this.createTemplate();
-    this.children = [];
     this.series = [];
     this.render();
     this.loadSeries();
