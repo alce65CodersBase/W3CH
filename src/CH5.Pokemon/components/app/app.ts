@@ -29,17 +29,21 @@ export class App {
     const pathname = lastFromLocation();
     consoleDebug('State loaded ' + pathname);
     consoleDebug(this.state);
-    switch (pathname) {
-      case '/':
-      case '/index.html':
-        new HomePage('main', this.state);
-        break;
-      case '/my-pokemons.html':
-        new FavoritesPage('main', this.state);
-        break;
-      default:
-        new DetailsPage('main', this.state);
-        break;
+    try {
+      switch (pathname) {
+        case '/':
+        case '/index.html':
+          new HomePage('main', this.state);
+          break;
+        case '/my-pokemons.html':
+          new FavoritesPage('main', this.state);
+          break;
+        default:
+          new DetailsPage('main', this.state);
+          break;
+      }
+    } catch (error) {
+      consoleDebug((error as Error).message);
     }
   }
 }
