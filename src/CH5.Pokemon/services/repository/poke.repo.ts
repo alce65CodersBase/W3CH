@@ -12,10 +12,7 @@ export function createPokeRepo() {
   };
 
   const queryPoke = async (url: string): Promise<Pokemon> => {
-    const resp = await fetch(url, {
-      mode: 'cors',
-    });
-    return resp.json();
+    return fetchPoke(url) as unknown as Promise<Pokemon>;
   };
 
   const addPoke = async (url: string, body: Pokemon): Promise<Pokemon> => {
