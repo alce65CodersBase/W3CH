@@ -1,6 +1,7 @@
 import { Component } from '../../../lib/component/component';
+import { consoleDebug } from '../../../lib/tools/debug';
 import { State } from '../../services/state/state';
-import { MyPokeList } from './my.poke.list';
+import { MyPokeList } from '../lists/my.poke.list';
 
 export class FavoriteIcon extends Component {
   constructor(
@@ -25,8 +26,7 @@ export class FavoriteIcon extends Component {
   }
 
   private manageComponent() {
-    const componentElement = this.element as HTMLElement;
-    const icon = componentElement.querySelector('i') as HTMLElement;
+    const icon = this.element as HTMLElement;
     if (this.state.favorites.find((item) => +item.id === +this.pokeId)) {
       icon.classList.remove('far');
       icon.classList.add('fas');
@@ -37,16 +37,15 @@ export class FavoriteIcon extends Component {
     icon.addEventListener('click', this.handleIconFavorite.bind(this));
   }
 
-  private handleIconFavorite(ev: Event) {
+  private async handleIconFavorite(ev: Event) {
     ev.preventDefault();
     const element = ev.target as HTMLElement;
     element.classList.toggle('far');
     element.classList.toggle('fas');
-    this.state.changeFavorites(this.pokeId).then((state) => {
-      if (document.querySelector('.my-poke-list')) {
-        new MyPokeList('.my-poke-list', state as State);
-      }
-      console.log('Favorite state changed');
-    });
+    const newState = await this.state.changeFavorites(this.pokeId);
+    if (document.querySelector('.my-poke-list')) {
+      new MyPokeList('.my-poke-list', newState as State);
+    }
+    consoleDebug('Favorite state changed');
   }
 }

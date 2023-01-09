@@ -1,5 +1,5 @@
 import { Component } from '../../../lib/component/component';
-import { MyPokeList } from '../../components/pokemons/my.poke.list';
+import { MyPokeList } from '../../components/lists/my.poke.list';
 import { State } from '../../services/state/state';
 
 export class FavoritesPage extends Component {

@@ -1,5 +1,6 @@
 import { Component } from '../../../lib/component/component';
-import { HomePokeList } from '../../components/pokemons/home.poke.list';
+import { HomePokeList } from '../../components/lists/home.poke.list';
+import { Pagination } from '../../components/pokemons/pagination';
 import { State } from '../../services/state/state';
 
 export class HomePage extends Component {
@@ -12,7 +13,7 @@ export class HomePage extends Component {
   render() {
     const element = super.innRender(this.selector);
     new HomePokeList('.home-poke-list', this.state);
-    // new Pagination('.pagination', this.state);
+    new Pagination('.pagination', this.state);
     return element;
   }
 
